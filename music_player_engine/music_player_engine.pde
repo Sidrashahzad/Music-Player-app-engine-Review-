@@ -11,7 +11,7 @@ String directory = " " ; // not exported
 void setup() 
 {
   File dir = new File(Path);//null if not export 
-  if( dir== null){ 
+  if( dir == null){ 
     dir = new File(directory):
     Filelist = dir.listFiles();
     for (File file: FIlelist){
