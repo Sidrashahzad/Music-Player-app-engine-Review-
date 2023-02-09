@@ -8,6 +8,7 @@ import ddf.minim.ugens.*;
 // global variables 
 String Path = new File("").getAbsolutePath();// exported program
 String directory = "//FS-052/studuser$/Gr11/s.shahzad3/My Documents/GitHub/Music-Player-app-engine-Review-/music_player_engine" ; // not exported 
+float pauseX1, pauseY1,pauseX2,PauseY2,pauseWidth,pauseHeight
 //
 Minim minim; //creates object to access all functions
 Audio player[] songs = new AudioPlayer[2]; //creates playlist 
@@ -45,12 +46,23 @@ if (songs[0] == null) {
       }
     }
   }
-}
+  size(400,800);//height & width
+  //fullScreen();//display width
+  float centerX = width*1/2
+  pauseX1= centerX - pausewidth*1/2;
+  pauseY1=;
+  pauseX2= width;
+  
 songs[0].loop(0);
 }
 
 //
-void draw(){}// end draw
+void draw(){
+  rect
+rect(pauseX1,PauseY1,pauseWidth,pauseHeight);
+rect(pauseX2,PauseY2,pauseWidth,pauseHeight);
+  
+}// end draw
 //
 void keyPressed(){}// end keypressed
 //
