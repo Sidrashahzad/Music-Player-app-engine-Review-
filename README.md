@@ -5,14 +5,14 @@ Examples To do List
 - [x] checked item
 - <del>[x] delete </del>
 ---
-# To do list
+# Done 
 - [x] pause button
 - [x] play button
 - [x] forward button
 - [x] reverse button
 
 ---
-# To include
+# To Do
 - []loop button
 - [] next button
 - [] previous button

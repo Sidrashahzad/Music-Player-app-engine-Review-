@@ -2,7 +2,7 @@
 
 
 
-float previousX1, previousY1, previousX2, previousY2, previousX3, previousY3;
+
 void setup(){
   size(800, 500);//height & width
   //fullScreen();//display width
@@ -57,31 +57,30 @@ void setup(){
  reverseY5 =  pauseStartDrawY + pauseHeight; 
  reverseX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*6/30);
  reverseY6 = playY3;
-/*
- nextX1 = ;
- nextY1,
- nextX2 = ;
- nextY2,
- nextX3 = ;
- nextY3 = ;;
- /*
-previousX1,
-previousY1,
-previousX2,
-previousY2,
-previousX3,
-previousY3;
-*/
+
+ nextX1 = pauseX2 ;
+ nextY1 = pauseHeight + (height * 15/30);
+ nextX2 = pauseX2;
+ nextY2 = nextY1 + pauseHeight ;
+ nextX3 = pauseX2 + pauseWidth + pauseWidth  ;
+ nextY3 = pauseHeight + (height * 17.5/30);
+ 
+nextrectX1,
+nextrectY1,
+nextrectWidth,
+nextrectheight
+
+previousX1 =  playX3 - pauseWidth - pauseWidth ;
+previousY1 = nextY1;
+previousX2 =  playX3 - pauseWidth - pauseWidth;
+previousY2 = nextY2;
+previousX3 = previousX1 - pauseWidth - pauseWidth;
+previousY3 = nextY3;
+
 }
 void draw(){
 drawMusicButtons();
-/*
 
-
-
-
-triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3);
-*/
 }
 void keyPressed(){}
 void mousePressed(){}
