@@ -10,10 +10,11 @@ Examples To do List
 - [x] play button
 - [x] forward button
 - [x] reverse button
+- [x]next button
+- [x]  previous button
 
 ---
 # To Do
 - []loop button
-- [] next button
-- [] previous button
+
 ---
