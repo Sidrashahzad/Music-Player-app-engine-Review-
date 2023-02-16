@@ -10,6 +10,11 @@ float reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6;
 float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3;
 float nextrectX1, nextrectY1, nextrectWidth, nextrectheight;
 float previousX1, previousY1, previousX2, previousY2, previousX3, previousY3;
+float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
+float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
+float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
+float muteX, muteY, muteWidth, muteHeight;
+
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF, black = #000000; // day mode 
 
@@ -21,6 +26,9 @@ color resetcolourDaymode = #FFFFFF, black = #000000; // day mode
     drawReverseButton();
     drawNextButton();
     drawpreviousButton();
+    drawlooponceButton();
+    drawLoopInfinite();
+    drawloopPlaylist();
 }
  //
  // end music buttons
@@ -47,9 +55,25 @@ triangle(reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6);
 }
 
 void drawNextButton(){
-triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3)
-rect(nextrectX1, nextrectY1, nextrectWidth, nextrectheight);
+triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
+//rect(nextrectX1, nextrectY1, nextrectWidth, nextrectheight);
 
 }
 void drawpreviousButton(){
 triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3);}
+
+void drawlooponceButton(){
+rect(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+}
+
+void drawLoopInfinite() {
+rect(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
+}
+
+void drawloopPlaylist(){
+rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
+}
+
+void drawMuteButton(){
+rect(muteX, muteY, muteWidth, muteHeight);
+}

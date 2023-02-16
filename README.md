@@ -15,6 +15,10 @@ Examples To do List
 
 ---
 # To Do
-- []loop button
+- [] loop single song once Button - working
+- [] loop single song infinite Button-  working 
+- [] loop play list - working 
+- [] mute button 
+- [] shuffle
 
 ---
