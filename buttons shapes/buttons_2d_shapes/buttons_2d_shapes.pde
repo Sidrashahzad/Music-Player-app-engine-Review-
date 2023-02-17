@@ -24,7 +24,8 @@ void setup(){
   playX2 = pauseX1; 
   playY2 =  pauseStartDrawY + pauseHeight;
   playX3 =  pauseX2 + pauseWidth;
-  playY3 =  height * 1/2 ; 
+  playY3 =   pauseY2 + (height*3/30); 
+  
   
   reverseX1 =  pauseStartDrawX  - (width*7/30) ; 
   reverseY1 = pauseStartDrawY;
@@ -76,7 +77,7 @@ loopOnceY = nextY1;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
 
-loopInfiniteX = stopWidth + pauseWidth + pauseWidth + pauseWidth;
+loopInfiniteX =  reverseX3;
 loopInfiniteY = nextY1;
 loopInfiniteWidth = pauseHeight;
 loopInfiniteHeight = pauseHeight;
