@@ -1,8 +1,4 @@
 
-
-
-
-
 void setup(){
   size(800, 500);//height & width
   //fullScreen();//display width
@@ -89,6 +85,7 @@ loopPlaylistX = forwardX1;
 loopPlaylistY = nextY1;
 loopPlaylistWidth = pauseHeight;
 loopPlaylistHeight = pauseHeight;
+
 
 
 }
