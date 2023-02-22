@@ -11,6 +11,8 @@ float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3;
 float nextrectX1, nextrectY1, nextrectWidth, nextrectheight;
 float previousX1, previousY1, previousX2, previousY2, previousX3, previousY3;
 float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
+float loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height;
+float loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3;
 float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
 float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
@@ -29,6 +31,7 @@ color resetcolourDaymode = #FFFFFF, black = #000000; // day mode
     drawlooponceButton();
     drawLoopInfinite();
     drawloopPlaylist();
+    drawMuteButton();
 }
  //
  // end music buttons
@@ -63,7 +66,10 @@ void drawpreviousButton(){
 triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3);}
 
 void drawlooponceButton(){
-rect(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+
+ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
+triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
 }
 
 void drawLoopInfinite() {
@@ -76,4 +82,5 @@ rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
 
 void drawMuteButton(){
 rect(muteX, muteY, muteWidth, muteHeight);
+
 }

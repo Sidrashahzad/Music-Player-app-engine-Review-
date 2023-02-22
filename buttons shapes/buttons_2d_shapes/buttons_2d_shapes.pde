@@ -75,10 +75,25 @@ void setup(){
  previousY3 = nextY3;
 
 
-loopOnceX = stopX;
-loopOnceY = nextY1;
+
+loopOnceX = stopX + pauseWidth + pauseWidth ;
+loopOnceY = nextY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
+
+loopOnceX2 = loopOnceX;
+loopOnceY2 = loopOnceY ;
+loopOnce2Width = pauseHeight - pauseWidth;
+loopOnce2Height = pauseHeight - pauseWidth;
+
+
+loopOnceTriX1 = loopOnce2Width + pauseWidth;
+loopOnceTriY1 = loopOnceY;
+loopOnceTriX2 = loopOnceWidth + pauseWidth;
+loopOnceTriY2 = loopOnceY2;
+loopOnceTriX3 = loopOnceX + pauseWidth;
+loopOnceTriY3 =  nextY1 + pauseWidth;
+
 
 loopInfiniteX = stopWidth + pauseWidth + pauseWidth + pauseWidth;
 loopInfiniteY = nextY1;
@@ -90,6 +105,10 @@ loopPlaylistY = nextY1;
 loopPlaylistWidth = pauseHeight;
 loopPlaylistHeight = pauseHeight;
 
+muteX =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*8/30);
+muteY = pauseY1;
+muteWidth = pauseHeight;
+muteHeight = pauseHeight;
 
 }
 void draw(){
