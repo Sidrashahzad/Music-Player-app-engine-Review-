@@ -1,8 +1,4 @@
 
-
-
-
-
 void setup(){
   size(800, 500);//height & width
   //fullScreen();//display width
@@ -28,7 +24,8 @@ void setup(){
   playX2 = pauseX1; 
   playY2 =  pauseStartDrawY + pauseHeight;
   playX3 =  pauseX2 + pauseWidth;
-  playY3 =  height * 1/2 ; 
+  playY3 =   pauseY2 + (height*3/30); 
+  
   
   reverseX1 =  pauseStartDrawX  - (width*7/30) ; 
   reverseY1 = pauseStartDrawY;
@@ -81,6 +78,7 @@ loopOnceY = nextY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
 
+<<<<<<< HEAD
 loopOnceX2 = loopOnceX;
 loopOnceY2 = loopOnceY ;
 loopOnce2Width = pauseHeight - pauseWidth;
@@ -96,6 +94,9 @@ loopOnceTriY3 =  nextY1 + pauseWidth;
 
 
 loopInfiniteX = stopWidth + pauseWidth + pauseWidth + pauseWidth;
+=======
+loopInfiniteX =  reverseX3;
+>>>>>>> 47e00acadb24d2e8ae0255d008ffd3e4df524104
 loopInfiniteY = nextY1;
 loopInfiniteWidth = pauseHeight;
 loopInfiniteHeight = pauseHeight;
@@ -109,6 +110,7 @@ muteX =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*8/30);
 muteY = pauseY1;
 muteWidth = pauseHeight;
 muteHeight = pauseHeight;
+
 
 }
 void draw(){
