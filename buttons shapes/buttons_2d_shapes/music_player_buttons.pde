@@ -19,7 +19,7 @@ float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
 
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
-color resetcolourDaymode = #FFFFFF, black = #000000; // day mode 
+color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
 
  void drawMusicButtons(){
    drawPauseButton();
@@ -41,7 +41,7 @@ color resetcolourDaymode = #FFFFFF, black = #000000; // day mode
  rect(pauseX2, pauseY2,pauseWidth ,pauseHeight);
 }
 void drawStopButton(){
-  fill( black );// ternary operator 
+  fill( blue );// ternary operator 
 rect( stopX, stopY, stopWidth, stopHeight );
 fill( resetcolourDaymode );
 }

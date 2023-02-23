@@ -7,6 +7,7 @@ void setup(){
   pauseScaleWidth =  1.0/30.0;
   pauseScaleHeight =  1.0/5.0;
   println(pauseScaleWidth);
+  
   pauseWidth = width * pauseScaleWidth;
   pauseX1 = pauseStartDrawX - pauseWidth - pauseWidth*1/2;
   pauseY1 = pauseStartDrawY ;
