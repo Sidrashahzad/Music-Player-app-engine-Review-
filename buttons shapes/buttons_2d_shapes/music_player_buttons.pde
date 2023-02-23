@@ -10,6 +10,7 @@ float reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6;
 float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3;
 float nextrectX1, nextrectY1, nextrectWidth, nextrectheight;
 float previousX1, previousY1, previousX2, previousY2, previousX3, previousY3;
+float looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight;
 float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
 float loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height;
 float loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3;
@@ -66,7 +67,7 @@ void drawpreviousButton(){
 triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3);}
 
 void drawlooponceButton(){
-
+rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
 ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
 ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
 triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);

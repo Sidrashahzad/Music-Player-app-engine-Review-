@@ -27,32 +27,32 @@ void setup(){
   playY3 =   pauseY2 + (height*3/30); 
   
   
-  reverseX1 =  pauseStartDrawX  - (width*7/30) ; 
+  reverseX1 =  pauseStartDrawX  - (width*6/30) ; 
   reverseY1 = pauseStartDrawY;
-  reverseX2 =  pauseStartDrawX  - (width*7/30);
+  reverseX2 =  pauseStartDrawX  - (width*6/30);
   reverseY2 =  pauseStartDrawY + pauseHeight;
-  reverseX3= pauseStartDrawX  - (width*9/30);
+  reverseX3= pauseStartDrawX  - (width*8/30);
   reverseY3 = playY3;
 
-  reverseX4 =  pauseStartDrawX  - (width*5/30) ;
+  reverseX4 =  pauseStartDrawX  - (width*4/30) ;
   reverseY4 = pauseStartDrawY;
-  reverseX5 =  pauseStartDrawX  - (width*5/30) ;
+  reverseX5 =  pauseStartDrawX  - (width*4/30) ;
   reverseY5 =  pauseStartDrawY + pauseHeight;  
-  reverseX6 = pauseStartDrawX  - (width*7/30);
+  reverseX6 = pauseStartDrawX  - (width*6/30);
   reverseY6 = playY3;
  
- forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*3/30);
+ forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*2/30);
  forwardY1 =  pauseStartDrawY; 
- forwardX2 =   pauseStartDrawX  + pauseWidth + pauseWidth +(width*3/30);
+ forwardX2 =   pauseStartDrawX  + pauseWidth + pauseWidth +(width*2/30);
  forwardY2 =  pauseStartDrawY + pauseHeight; 
- forwardX3 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*5/30);
+ forwardX3 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
  forwardY3 = playY3;
  
- forwardX4 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*5/30);
+ forwardX4 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
  forwardY4 = pauseStartDrawY; 
- forwardX5 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*5/30);
+ forwardX5 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
  forwardY5 =  pauseStartDrawY + pauseHeight; 
- forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*7/30);
+ forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*6/30);
  forwardY6 = playY3;
 
  nextX1 = pauseX2 ;
@@ -71,14 +71,12 @@ void setup(){
  previousX3 = previousX1 - pauseWidth - pauseWidth;
  previousY3 = nextY3;
 
-
-
 loopOnceX = stopX + pauseWidth + pauseWidth ;
 loopOnceY = nextY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
 
-<<<<<<< HEAD
+
 loopOnceX2 = loopOnceX;
 loopOnceY2 = loopOnceY ;
 loopOnce2Width = pauseHeight - pauseWidth;
@@ -93,10 +91,7 @@ loopOnceTriX3 = loopOnceX + pauseWidth;
 loopOnceTriY3 =  nextY1 + pauseWidth;
 
 
-loopInfiniteX = stopWidth + pauseWidth + pauseWidth + pauseWidth;
-=======
 loopInfiniteX =  reverseX3;
->>>>>>> 47e00acadb24d2e8ae0255d008ffd3e4df524104
 loopInfiniteY = nextY1;
 loopInfiniteWidth = pauseHeight;
 loopInfiniteHeight = pauseHeight;
