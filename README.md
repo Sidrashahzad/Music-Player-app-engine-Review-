@@ -6,8 +6,10 @@ Examples To do List
 - <del>[x] delete </del>
 ---
 # Done 
-- [x] pause button
-- [x] play button
+- [x] pause-pause button
+  - Begininng- start song
+  - middle - 
+  - end - end song 
 - [x] forward button
 - [x] reverse button
 - [x] next button
