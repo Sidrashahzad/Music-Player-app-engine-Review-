@@ -10,6 +10,8 @@ Examples To do List
   - Begininng- start song
   - middle - 
   - end - end song 
+- [x] Stop Button
+   - stops song without exiting
 - [x] forward button
 - [x] reverse button
 - [x] next button
@@ -21,6 +23,8 @@ Examples To do List
 - [] loop single song infinite Button-  working 
 - [] loop play list - working 
 - [] mute button 
+   - mute stops volume song continues
+   - unmute until end file 
 - [] shuffle
 
 ---
