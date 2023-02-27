@@ -17,24 +17,24 @@ Examples To do List
 - [x] reverse button
    - skip reverse 4 seconds 
 - [x] next button
--current song 
--pause(i)
--rewind(i)
--index+1
--next song
+- current song 
+- pause(i)
+- rewind(i)
+- index+1
+- next song
   - play(index)
-  -error array index out of bounds: array.length()-1 = 0
-  -if( index + 1 => array.length) { index =0;}
+  - error array index out of bounds: array.length()-1 = 0
+  - if( index + 1 => array.length) { index =0;}
 
 - [x]  previous button
--current song 
--pause(i)
--rewind(i)
--index-1
--previous song 
--play(index)
--error array index out of bounds: array.length()-1 = 0
-  -if( index + 1 => array.length) { index =0;}
+  - current song 
+- pause(i)
+- rewind(i)
+- index-1
+- previous song 
+- play(index)
+- error array index out of bounds: array.length()-1 = 0
+  - if( index + 1 => array.length) { index =0;}
 ---
 # To Do
 - [] loop single song once Button - working
