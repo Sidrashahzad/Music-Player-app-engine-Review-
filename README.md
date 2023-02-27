@@ -13,15 +13,32 @@ Examples To do List
 - [x] Stop Button
    - stops song without exiting
 - [x] forward button
+   - skip forward 4 seconds 
 - [x] reverse button
+   - skip reverse 4 seconds 
 - [x] next button
+current song 
+pause(i)
+rewind(i)
+index+1
+next song
+  - play(index)
+  error array Index out of bounds: array.length()-1 = 0
 - [x]  previous button
-
+current song 
+pause(i)
+rewind(i)
+index-1
+next song 
+play(index)
 ---
 # To Do
 - [] loop single song once Button - working
+  - parameter = 1
 - [] loop single song infinite Button-  working 
-- [] loop play list - working 
+  - parameter = -1 or blank 
+ [] loop play list - working 
+
 - [] mute button 
    - mute stops volume song continues
    - unmute until end file 
