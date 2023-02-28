@@ -1,21 +1,26 @@
-
+int appWidth, appHeight;
 void setup(){
   size(800, 500);//height & width
   //fullScreen();//display width
-  float pauseStartDrawX = width * 2/4;
-  float pauseStartDrawY= height * 4/10;
+  //Error : canvas is bigger then Display
+  // Error ; stating display geometrey ( i.e landscape, portrait, square ) 
+  appWidth = width ;
+  appHeight = height;
+  //
+  float pauseStartDrawX = appWidth * 2/4;
+  float pauseStartDrawY=  appHeight * 4/10;
   pauseScaleWidth =  1.0/30.0;
   pauseScaleHeight =  1.0/5.0;
   println(pauseScaleWidth);
   
-  pauseWidth = width * pauseScaleWidth;
+  pauseWidth = appWidth * pauseScaleWidth;
   pauseX1 = pauseStartDrawX - pauseWidth - pauseWidth*1/2;
   pauseY1 = pauseStartDrawY ;
   pauseX2 = pauseStartDrawX + pauseWidth*1/2;
   pauseY2 = pauseY1;
-  pauseHeight = height * pauseScaleHeight;
+  pauseHeight = appHeight * pauseScaleHeight;
   
-  stopX =  pauseStartDrawX  - (width*14/30);
+  stopX =  pauseStartDrawX  - (appWidth*14/30);
   stopY = pauseY1;
   stopWidth = pauseHeight;
   stopHeight = pauseHeight;
@@ -25,43 +30,43 @@ void setup(){
   playX2 = pauseX1; 
   playY2 =  pauseStartDrawY + pauseHeight;
   playX3 =  pauseX2 + pauseWidth;
-  playY3 =   pauseY2 + (height*3/30); 
+  playY3 =   pauseY2 + (appHeight*3/30); 
   
   
-  reverseX1 =  pauseStartDrawX  - (width*6/30) ; 
+  reverseX1 =  pauseStartDrawX  - (appWidth*6/30) ; 
   reverseY1 = pauseStartDrawY;
-  reverseX2 =  pauseStartDrawX  - (width*6/30);
+  reverseX2 =  pauseStartDrawX  - (appWidth*6/30);
   reverseY2 =  pauseStartDrawY + pauseHeight;
-  reverseX3= pauseStartDrawX  - (width*8/30);
+  reverseX3= pauseStartDrawX  - (appWidth*8/30);
   reverseY3 = playY3;
 
-  reverseX4 =  pauseStartDrawX  - (width*4/30) ;
+  reverseX4 =  pauseStartDrawX  - (appWidth*4/30) ;
   reverseY4 = pauseStartDrawY;
-  reverseX5 =  pauseStartDrawX  - (width*4/30) ;
+  reverseX5 =  pauseStartDrawX  - (appWidth*4/30) ;
   reverseY5 =  pauseStartDrawY + pauseHeight;  
-  reverseX6 = pauseStartDrawX  - (width*6/30);
+  reverseX6 = pauseStartDrawX  - (appWidth*6/30);
   reverseY6 = playY3;
  
- forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*2/30);
+ forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY1 =  pauseStartDrawY; 
- forwardX2 =   pauseStartDrawX  + pauseWidth + pauseWidth +(width*2/30);
+ forwardX2 =   pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY2 =  pauseStartDrawY + pauseHeight; 
- forwardX3 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
+ forwardX3 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY3 = playY3;
  
- forwardX4 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
+ forwardX4 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY4 = pauseStartDrawY; 
- forwardX5 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*4/30);
+ forwardX5 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY5 =  pauseStartDrawY + pauseHeight; 
- forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*6/30);
+ forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*6/30);
  forwardY6 = playY3;
 
  nextX1 = pauseX2 ;
- nextY1 = pauseHeight + (height * 15/30);
+ nextY1 = pauseHeight + (appHeight * 15/30);
  nextX2 = pauseX2;
  nextY2 = nextY1 + pauseHeight ;
  nextX3 = pauseX2 + pauseWidth + pauseWidth;
- nextY3 = pauseHeight + (height * 17.5/30);
+ nextY3 = pauseHeight + (appHeight * 17.5/30);
 
 
 
@@ -84,12 +89,12 @@ loopOnce2Width = pauseHeight - pauseWidth;
 loopOnce2Height = pauseHeight - pauseWidth;
 
 
-loopOnceTriX1 = loopOnce2Width + pauseWidth;
-loopOnceTriY1 = loopOnceY;
-loopOnceTriX2 = loopOnceWidth + pauseWidth;
-loopOnceTriY2 = loopOnceY2;
-loopOnceTriX3 = loopOnceX + pauseWidth;
-loopOnceTriY3 =  nextY1 + pauseWidth;
+ loopOnceTriX1 = loopOnce2Width + pauseWidth;
+ loopOnceTriY1 = loopOnceY;
+ loopOnceTriX2 = loopOnceWidth + pauseWidth;
+ loopOnceTriY2 = loopOnceY2;
+ loopOnceTriX3 = loopOnceX + pauseWidth;
+ loopOnceTriY3 =  nextY1 + pauseWidth;
 
 
 loopInfiniteX =  reverseX3;
@@ -97,12 +102,12 @@ loopInfiniteY = nextY1;
 loopInfiniteWidth = pauseHeight;
 loopInfiniteHeight = pauseHeight;
 
-loopPlaylistX = forwardX1;
-loopPlaylistY = nextY1;
-loopPlaylistWidth = pauseHeight;
-loopPlaylistHeight = pauseHeight;
+ loopPlaylistX = forwardX1;
+ loopPlaylistY = nextY1;
+ loopPlaylistWidth = pauseHeight;
+ loopPlaylistHeight = pauseHeight;
 
-muteX =  pauseStartDrawX  + pauseWidth + pauseWidth +(width*8/30);
+muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
 muteY = pauseY1;
 muteWidth = pauseHeight;
 muteHeight = pauseHeight;
