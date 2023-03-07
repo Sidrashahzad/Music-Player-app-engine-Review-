@@ -46,7 +46,7 @@ song[currentSong].mute();
 // forward / reverse buttons
 if ( key == 'f' || key == 'F'){
  songs[currentSong].skip(3000);// 1000 = 1sec
-} else if(songs[currentSong ].position() >= songs[currentSong ]. length()*4/5 ) { 
+} else if(songs[currentSong].position() >= songs[currentSong]. length()*4/5 ) { 
 // i finish 
 } if else (){// i finish 
 }// end forward 
@@ -55,23 +55,43 @@ if ( key == 'f' || key == 'F'){
   }// end reverse 
   // single loop
   if ( key == '1' )  {
-  delay( songs[currentSong].length() - songs[currentSong ].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
+  delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
    songs[currentSong].loop(1);
    
   }//end single loop 
   //loop infinite
    if ( key <= '9' && key ! = 1)  {
-  delay( songs[currentSong ].length() - songs[currentSong ].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
+  delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
    songs[currentSong].loop(-1);
    }// end loop infinite 
   //STOP
-  if ( songs[currentSong ].isPlaying() ) {.pause ; .rewind;}
-   else {.rewind();} 
+  if ( key == 's' || key == 'S'){ 
+  if ( songs[currentSong].isPlaying() ) {songs[currentSong].pause(); songs[currentSong].rewind();}
+  /* Possible for smarter STOP button
+   include "soft pause" for first 15 sec of stop 
+  include auto previous & next track if stop at the begining or end of file
+  */ 
+   else {songs[currentSong ].rewind();}
+  } //end stop 
  // play-pause
-//  if (key == 'p' || key =='P')
-  //{
-    
-  }
+    if (key == 'p' || key =='P')
+  {  if( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if (){
+    // I finish 
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    } else {
+   songs[currentSong].play();}// no auto rewind like Loop 
+
+}//end play-pause Button
+ //next            
+  //if (key == 'n' || key == 'N'){}//end next button
+  
+  
+  // previous button  
+  // if ( key == 'b' || key == 'B'){}// end previous button 
+  
 }// end keyPressedMusic
 void concatenationofMusicFiles(){
 path = "data/"; 
