@@ -68,8 +68,6 @@ void setup(){
  nextX3 = pauseX2 + pauseWidth + pauseWidth;
  nextY3 = pauseHeight + (appHeight * 17.5/30);
 
-
-
  previousX1 =  playX3 - pauseWidth - pauseWidth ;
  previousY1 = nextY1;
  previousX2 =  playX3 - pauseWidth - pauseWidth;

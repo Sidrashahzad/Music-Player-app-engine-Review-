@@ -17,6 +17,8 @@ float loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3,
 float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
 float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
+color grey = #CECECE;
+
 
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
@@ -69,7 +71,9 @@ triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3)
 void drawlooponceButton(){
 rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
 ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+fill(grey);
 ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
+fill(resetcolourDaymode);
 triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
 }
 
