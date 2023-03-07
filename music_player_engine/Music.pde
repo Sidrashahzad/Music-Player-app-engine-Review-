@@ -71,7 +71,7 @@ if ( key == 'f' || key == 'F'){
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file
   */ 
-   else {songs[currentSong ].rewind();}
+   else {songs[currentSong].rewind();}
   } //end stop 
  // play-pause
     if (key == 'p' || key =='P')
@@ -86,7 +86,12 @@ if ( key == 'f' || key == 'F'){
 
 }//end play-pause Button
  //next            
-  //if (key == 'n' || key == 'N'){}//end next button
+  //if (key == 'n' || key == 'N'){
+  if (songs[currentSong].isPlaying()) {
+   songs[currentSong].pause();
+   }
+  
+  }//end next button
   
   
   // previous button  
@@ -97,6 +102,7 @@ void concatenationofMusicFiles(){
 path = "data/"; 
 Bonfire = "Bonfire - An Jone.mp3";
 Caramalized = "Carmelized - Craig MacArthur.mp3" ;
+Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
 
 } // end  concatenation
 // end music subprogram
