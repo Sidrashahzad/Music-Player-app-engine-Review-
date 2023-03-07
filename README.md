@@ -27,7 +27,7 @@ Examples To do List
   - if( index + 1 >= array.length) { index = 0;}
 
 - [x]  previous button
-  - current song 
+ - current song 
 - pause(i)
 - rewind(i)
 - index-1
