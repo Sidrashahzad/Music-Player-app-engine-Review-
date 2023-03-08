@@ -40,7 +40,10 @@ song[currentSong ].unmute();
  songs[currentSong].rewind();
  } else {
 song[currentSong].mute(); 
-   }
+} /* else if { nextsong.playing();
+song [currentSong].unmute(); 
+
+ } */ 
  }// end mute button
  
 // forward / reverse buttons
@@ -69,10 +72,14 @@ if ( key == 'f' || key == 'F'){
   if ( songs[currentSong].isPlaying() ) {songs[currentSong].pause(); songs[currentSong].rewind();}
   /* Possible for smarter STOP button
    include "soft pause" for first 15 sec of stop 
-  include auto previous & next track if stop at the begining or end of file
-  */ 
+  include auto previous & next track if stop at the begining or end of file*/
    else {songs[currentSong].rewind();}
-  } //end stop 
+  /* else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
+{
+  songs[currentSong].isPlaying();
+}
+  } */
+  //end stop 
  // play-pause
     if (key == 'p' || key =='P')
   {  if( songs[currentSong].isPlaying() ) {
@@ -87,8 +94,15 @@ if ( key == 'f' || key == 'F'){
 }//end play-pause Button
  //next            
   //if (key == 'n' || key == 'N'){
-  if (songs[currentSong].isPlaying()) {
+  /*if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
+   songs[currentSong].rewind();
+   //
+   arrayFixError();
+   //
+    songs[currentSong].play
+  } else { 
+    songs[currentSong].rewind(); */
    }
   
   }//end next button
