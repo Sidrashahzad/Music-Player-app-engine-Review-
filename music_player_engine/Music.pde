@@ -4,7 +4,7 @@ Audio player[] songs = new AudioPlayer[2]; //creates playlist
 //Audio player[] soundeffects = new AudioPlayer[2]; 
 String path, Bonfire, Caramalized;
 int currentSong = 0;
-
+Boolean autoPlayOn=false; 
 void setupMusic(){
   
 minim = new Minim (this);// load music data directoy, also from project folder
@@ -18,10 +18,16 @@ songs[0] = minim.loadFile( path + Bonfire) ;
 songs[1] = minim.loadFile( path + Caramalized) ;
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
-
 }// end setupMusic
-
-void drawMusic(){}//  end drawMusic
+//
+void drawMusic(){
+  //
+  println("current Song Position:", songs[currentSong ].position());
+println("\tEnd of Song:",songs[currentSong ].length() );
+//
+autoPlayMusic();
+//
+}//  end drawMusic
 
 void mousePressedMusic(){
  
@@ -92,9 +98,20 @@ if ( key == 'f' || key == 'F'){
    songs[currentSong].play();}// no auto rewind like Loop 
 
 }//end play-pause Button
+// Autoplay button 
+if (key == 'o'|| key == 'O') {
+if (autoPlayOn=false )
+{
+  autoPlayOn=true;
+} 
+else {autoPlayOn=false;
+  } 
+} // end Autoplay 
+
+
  //next            
-  //if (key == 'n' || key == 'N'){
-  /*if (songs[currentSong].isPlaying()) {
+  /if (key == 'n' || key == 'N'){
+  if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
    //
@@ -102,15 +119,20 @@ if ( key == 'f' || key == 'F'){
    //
     songs[currentSong].play
   } else { 
-    songs[currentSong].rewind(); */
+    songs[currentSong].rewind(); 
    }
   
   }//end next button
   
   
   // previous button  
-  // if ( key == 'b' || key == 'B'){}// end previous button 
+   if ( key == 'b' || key == 'B'){
+   
+   }// end previous button 
   
+  // 
+
+ 
 }// end keyPressedMusic
 void concatenationofMusicFiles(){
 path = "data/"; 
@@ -119,4 +141,12 @@ Caramalized = "Carmelized - Craig MacArthur.mp3" ;
 Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
 
 } // end  concatenation
+void autoPlayMusic(){
+// Auto play Section, see subprogam 
+if ( autoPlayOn )  {
+//if (){} if else () {} else {}
+// Ex .position() >= .length(), then rewind(), currentSong += 1, .play()
+// Ex2 .isplaying(), when false rewind(), currentSong += , .play 
+}// autoPlayMusic 
+
 // end music subprogram

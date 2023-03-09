@@ -14,12 +14,10 @@ setupMusic();
 songs[currentSong ].loop(0);// channge index manually 
 //
 }// end setup 
-
-//
 void draw(){
-println("current Song Position:", songs[currentSong ].position());
-println("\tEnd of Song:",songs[currentSong ].length() );
-}// end draw
+drawMusic();
+}
+//end draw
 //
 void keyPressed(){
 keyPressedMusic();
