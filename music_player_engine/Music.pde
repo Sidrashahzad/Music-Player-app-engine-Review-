@@ -1,6 +1,6 @@
 // global variables
 Minim minim; //creates object to access all functions
-Audio player[] songs = new AudioPlayer[2]; //creates playlist 
+Audio player[] songs = new AudioPlayer[3]; //creates playlist 
 //Audio player[] soundeffects = new AudioPlayer[2]; 
 String path, Bonfire, Caramalized;
 int currentSong = 0;
@@ -115,11 +115,17 @@ else {autoPlayOn=false;
    songs[currentSong].pause();
    songs[currentSong].rewind();
    //
-   arrayFixError();
    //
-    songs[currentSong].play
-  } else { 
-    songs[currentSong].rewind(); 
+    songs[currentSong].play()
+  } else if ( currentSong == songs.length - 1){ // Error catch ArrayOutofBounds 
+  currentSong = songs.length - songs.length;// Intention = 0
+ currentSong.rewind()
+ }
+  else { 
+     currentSong ++ ;
+      currentSong.rewind();
+
+     //Throws ArrayoutofBounds 
    }
   
   }//end next button
@@ -127,7 +133,23 @@ else {autoPlayOn=false;
   
   // previous button  
    if ( key == 'b' || key == 'B'){
-   
+   if (songs[currentSong].isPlaying()) {
+   songs[currentSong].pause();
+   songs[currentSong].rewind();
+   //
+   //
+    songs[currentSong].play()
+  } else if ( currentSong == songs.length + 1){ // Error catch ArrayOutofBounds 
+  currentSong = songs.length + songs.length;// Intention = 0
+ currentSong.rewind()
+ }
+  else { 
+     currentSong -- ;
+      currentSong.rewind();
+
+     //Throws ArrayoutofBounds 
+   }
+  
    }// end previous button 
   
   // 
