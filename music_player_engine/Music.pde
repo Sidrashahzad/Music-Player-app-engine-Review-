@@ -35,7 +35,72 @@ void mousePressedMusic(){
 
 void keyPressedMusic(){ //<>//
 // music key board shorcut  
-if ( key == 'm' || key == 'M'){//mute button continue working on it \
+if ( key == 'm' || key == 'M'){
+  mute();
+ }
+ 
+// forward / reverse buttons
+if ( key == 'f' || key == 'F'){
+ void forward();
+}// end forward 
+  if(key == 'r' || key == 'R') {
+    Reverse();
+  }// end reverse 
+  
+  // single loop
+  if ( key == '1' )  {
+    singleloop();
+  }//end single loop 
+  
+  //loop infinite
+   if ( key <= '9' && key ! = 1)  {
+   infiniteloop();
+   }// end loop infinite 
+  //STOP
+  if ( key == 's' || key == 'S'){ 
+     Stop();
+  }
+  //end stop 
+ // play-pause
+    if (key == 'p' || key =='P'){  
+   play-pause();
+}//end play-pause Button
+
+// Autoplay button 
+if (key == 'o'|| key == 'O') {
+ Autoplay();
+} // end Autoplay 
+
+
+ //next            
+  if (key == 'n' || key == 'N'){
+ next();
+  }//end next button
+  
+  
+  // previous button  
+   if ( key == 'b' || key == 'B'){
+   previous();
+   }// end previous button 
+}// end keyPressedMusic
+
+void concatenationofMusicFiles(){
+path = "data/"; 
+Bonfire = "Bonfire - An Jone.mp3";
+Caramalized = "Carmelized - Craig MacArthur.mp3" ;
+Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
+
+} // end  concatenation
+void autoPlayMusic(){
+// Auto play Section, see subprogam 
+if ( autoPlayOn )  {
+//if (){} if else () {} else {}
+// Ex .position() >= .length(), then rewind(), currentSong += 1, .play()
+// Ex2 .isplaying(), when false rewind(), currentSong += , .play 
+}// End autoPlayMusic 
+
+
+void mute(){  //mute button continue working on it \
   //Error this only work when music is playing
   // Error Fix: unmute or rewind when song is not playing (i.e unmute nextsong)
 if (songs[currentSong ].isMuted ()) {
@@ -49,33 +114,31 @@ song[currentSong].mute();
 } /* else if { nextsong.playing();
 song [currentSong].unmute(); 
 
- } */ 
- }// end mute button
+ } */}// end void mute
  
-// forward / reverse buttons
-if ( key == 'f' || key == 'F'){
- songs[currentSong].skip(3000);// 1000 = 1sec
+ void forward(){
+  songs[currentSong].skip(5000);// 1000 = 1sec
 } else if(songs[currentSong].position() >= songs[currentSong]. length()*4/5 ) { 
 // i finish 
-} if else (){// i finish 
-}// end forward 
-  if(key == 'r' || key == 'R') {
- songs[currentSong].skip(-3000);
-  }// end reverse 
-  // single loop
-  if ( key == '1' )  {
-  delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
+} if else (){}// i finish 
+ }// end void  forward 
+ 
+ 
+void Reverse(){
+songs[currentSong].skip(-5000);
+}// end void Reverse 
+
+void singleloop(){
+   delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
    songs[currentSong].loop(1);
-   
-  }//end single loop 
-  //loop infinite
-   if ( key <= '9' && key ! = 1)  {
+}// end void Single loop 
+void infiniteloop(){
   delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing 
    songs[currentSong].loop(-1);
-   }// end loop infinite 
-  //STOP
-  if ( key == 's' || key == 'S'){ 
-  if ( songs[currentSong].isPlaying() ) {songs[currentSong].pause(); songs[currentSong].rewind();}
+}// end void infinite loop 
+
+void Stop(){
+ if ( songs[currentSong].isPlaying() ) {songs[currentSong].pause(); songs[currentSong].rewind();}
   /* Possible for smarter STOP button
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file*/
@@ -83,12 +146,11 @@ if ( key == 'f' || key == 'F'){
   /* else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
 {
   songs[currentSong].isPlaying();
-}
-  } */
-  //end stop 
- // play-pause
-    if (key == 'p' || key =='P')
-  {  if( songs[currentSong].isPlaying() ) {
+} */
+  }// end void stop 
+  
+  void play-pause(){
+    if( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
   } else if (){
     // I finish 
@@ -96,22 +158,19 @@ if ( key == 'f' || key == 'F'){
     songs[currentSong].rewind();
     } else {
    songs[currentSong].play();}// no auto rewind like Loop 
-
-}//end play-pause Button
-// Autoplay button 
-if (key == 'o'|| key == 'O') {
-if (autoPlayOn=false )
+  }// end void play-pause  
+  
+ void Autoplay(){
+ if (autoPlayOn=false )
 {
   autoPlayOn=true;
 } 
 else {autoPlayOn=false;
-  } 
-} // end Autoplay 
-
-
- //next            
-  /if (key == 'n' || key == 'N'){
-  if (songs[currentSong].isPlaying()) {
+  }
+}// end void autoplay 
+  
+  void next(){ 
+    if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
    //
@@ -127,13 +186,9 @@ else {autoPlayOn=false;
 
      //Throws ArrayoutofBounds 
    }
-  
-  }//end next button
-  
-  
-  // previous button  
-   if ( key == 'b' || key == 'B'){
-   if (songs[currentSong].isPlaying()) {
+  }// end void next 
+  void previous(){
+    if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
    //
@@ -149,26 +204,6 @@ else {autoPlayOn=false;
 
      //Throws ArrayoutofBounds 
    }
+   }// end void previous 
   
-   }// end previous button 
-  
-  // 
-
- 
-}// end keyPressedMusic
-void concatenationofMusicFiles(){
-path = "data/"; 
-Bonfire = "Bonfire - An Jone.mp3";
-Caramalized = "Carmelized - Craig MacArthur.mp3" ;
-Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
-
-} // end  concatenation
-void autoPlayMusic(){
-// Auto play Section, see subprogam 
-if ( autoPlayOn )  {
-//if (){} if else () {} else {}
-// Ex .position() >= .length(), then rewind(), currentSong += 1, .play()
-// Ex2 .isplaying(), when false rewind(), currentSong += , .play 
-}// autoPlayMusic 
-
 // end music subprogram
