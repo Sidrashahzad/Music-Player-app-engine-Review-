@@ -118,14 +118,22 @@ song [currentSong].unmute();
  
  void forward(){
   songs[currentSong].skip(5000);// 1000 = 1sec
-} else if(songs[currentSong].position() >= songs[currentSong]. length()*4/5 ) { 
-// i finish 
-} if else (){}// i finish 
+} else if(songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) { 
+   songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    currentSong ++
+  // i finish 
+} 
  }// end void  forward 
  
  
 void Reverse(){
 songs[currentSong].skip(-5000);
+else if (songs[currentSong].position() <= songs[currentSong]. length()*3/10){
+  songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    current song --;
+} 
 }// end void Reverse 
 
 void singleloop(){
@@ -143,22 +151,23 @@ void Stop(){
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file*/
    else {songs[currentSong].rewind();}
-  /* else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
+   else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
 {
   songs[currentSong].isPlaying();
-} */
+} 
   }// end void stop 
   
   void play-pause(){
     if( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
-  } else if (){
-    // I finish 
+  } else if (songs[currentSong].position() >= songs[currentSong].length()*9/10){ 
+     
     songs[currentSong].pause();
     songs[currentSong].rewind();
     } else {
-   songs[currentSong].play();}// no auto rewind like Loop 
-  }// end void play-pause  
+       currentSong ++ ;
+   }// no auto rewind like Loop 
+}// end void play-pause  
   
  void Autoplay(){
  if (autoPlayOn=false )
@@ -168,7 +177,6 @@ void Stop(){
 else {autoPlayOn=false;
   }
 }// end void autoplay 
-  
   void next(){ 
     if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
@@ -178,12 +186,11 @@ else {autoPlayOn=false;
     songs[currentSong].play()
   } else if ( currentSong == songs.length - 1){ // Error catch ArrayOutofBounds 
   currentSong = songs.length - songs.length;// Intention = 0
- currentSong.rewind()
+ currentSong.rewind();
  }
   else { 
      currentSong ++ ;
       currentSong.rewind();
-
      //Throws ArrayoutofBounds 
    }
   }// end void next 
@@ -196,7 +203,7 @@ else {autoPlayOn=false;
     songs[currentSong].play()
   } else if ( currentSong == songs.length + 1){ // Error catch ArrayOutofBounds 
   currentSong = songs.length + songs.length;// Intention = 0
- currentSong.rewind()
+ currentSong.rewind();
  }
   else { 
      currentSong -- ;
