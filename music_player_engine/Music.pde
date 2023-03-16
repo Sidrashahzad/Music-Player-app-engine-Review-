@@ -206,8 +206,8 @@ else {autoPlayOn=false;
  currentSong.rewind();
  }
   else { 
+          currentSong.rewind();
      currentSong -- ;
-      currentSong.rewind();
 
      //Throws ArrayoutofBounds 
    }

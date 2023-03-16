@@ -5,7 +5,7 @@ Examples To do List
 - [x] checked item
 - <del>[x] delete </del>
 ---
-# Shapes Done 
+# To do list 
 - [x] play-pause button
 - Begininng- start song
 - middle - 
@@ -35,9 +35,8 @@ Examples To do List
 - play(index)
 - error array index out of bounds: index -1 = array.length()-1 
   - if( index + 1 <= -1) { index = array.length() -1 ;}
-  ---
-# Shapes To Do
-- [] loop single song once Button - working
+
+- [x] loop single song once Button - working
   - parameter = 1
 - [] loop single song infinite Button-  working 
   - parameter = -1 or blank 
