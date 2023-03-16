@@ -38,14 +38,16 @@ Examples To do List
 
 - [x] loop single song once Button - working
   - parameter = 1
- [] loop single song infinite Button-  working 
+- 
+[] loop single song infinite Button-  working 
   - parameter = -1 or blank 
- [] loop play list - working 
+- 
+[] loop play list - working 
  - parameter = int (random(0,array.length()) )
  - 
  [] mute button 
    - mute stops volume song continues
    - unmute until end file 
- [] shuffle
+ - [] shuffle
 
 ---
