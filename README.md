@@ -48,6 +48,7 @@ Examples To do List
  [] mute button 
    - mute stops volume song continues
    - unmute until end file 
- - [] shuffle
+ - 
+ [] shuffle
 
 ---
