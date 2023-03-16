@@ -7,11 +7,15 @@ Examples To do List
 ---
 # To do list 
 - [x] play-pause button
-- Begininng- start song
-- middle - 
-- end - end song 
+- length <= 1/10
+Rewind song 
+middle - play/pause normally
+- end - Length> 9/10 
+play next song 
 - [x] Stop Button
   - stops song without exiting
+  - soft pause 
+   - if songlength< 1/10 rewind song  
 - [x] forward button
    - skip forward 4 seconds 
 - [x] reverse button

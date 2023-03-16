@@ -29,16 +29,13 @@ autoPlayMusic();
 //
 }//  end drawMusic
 
-void mousePressedMusic(){
- 
-}// End Mute Button}// end  mousePressedMusic
+void mousePressedMusic(){}// end  mousePressedMusic
 
 void keyPressedMusic(){ //<>//
 // music key board shorcut  
 if ( key == 'm' || key == 'M'){
   mute();
- }
- 
+ }// End Mute Button
 // forward / reverse buttons
 if ( key == 'f' || key == 'F'){
  void forward();
@@ -46,7 +43,6 @@ if ( key == 'f' || key == 'F'){
   if(key == 'r' || key == 'R') {
     Reverse();
   }// end reverse 
-  
   // single loop
   if ( key == '1' )  {
     singleloop();
@@ -150,10 +146,11 @@ void Stop(){
   /* Possible for smarter STOP button
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file*/
-   else {songs[currentSong].rewind();}
+  
    else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
 {
   songs[currentSong].isPlaying();
+  songs[currentSong].rewind();
 } 
   }// end void stop 
   
