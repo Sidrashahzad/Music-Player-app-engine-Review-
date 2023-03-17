@@ -107,11 +107,11 @@ song[currentSong ].unmute();
  songs[currentSong].rewind();
  } else {
 song[currentSong].mute(); 
-} /* else if { nextsong.playing();
+}  else if { nextsong.playing();
 song [currentSong].unmute(); 
-
- } */}// end void mute
- 
+  } 
+ }// end void mute
+ //
  void forward(){
   songs[currentSong].skip(5000);// 1000 = 1sec
 } else if(songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) { 
@@ -125,7 +125,7 @@ song [currentSong].unmute();
  
 void Reverse(){
 songs[currentSong].skip(-5000);
-else if (songs[currentSong].position() <= songs[currentSong]. length()*3/10){
+else if (songs[currentSong].position() <= songs[currentSong]. length()*2/10){
   songs[currentSong].pause();
     songs[currentSong].rewind(); 
     current song --;
@@ -147,7 +147,7 @@ void Stop(){
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file*/
   
-   else if( songs[currentSong].position() <= songs[currentSong]. length()*1/5)
+   else if( songs[currentSong].position() <= songs[currentSong]. length()*1/10)
 {
   songs[currentSong].isPlaying();
   songs[currentSong].rewind();
@@ -158,7 +158,6 @@ void Stop(){
     if( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
   } else if (songs[currentSong].position() >= songs[currentSong].length()*9/10){ 
-     
     songs[currentSong].pause();
     songs[currentSong].rewind();
     } else {
@@ -201,11 +200,10 @@ else {autoPlayOn=false;
   } else if ( currentSong == songs.length + 1){ // Error catch ArrayOutofBounds 
   currentSong = songs.length + songs.length;// Intention = 0
  currentSong.rewind();
- }
-  else { 
-          currentSong.rewind();
-     currentSong -- ;
-
+ } else { 
+    currentSong.rewind();
+     currentSong --;
+     
      //Throws ArrayoutofBounds 
    }
    }// end void previous 
