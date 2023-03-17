@@ -95,8 +95,7 @@ if ( autoPlayOn )  {
 // Ex2 .isplaying(), when false rewind(), currentSong += , .play 
 }// End autoPlayMusic 
 
-
-void mute(){  //mute button continue working on it \
+void mute(){  //mute button continue working on it
   //Error this only work when music is playing
   // Error Fix: unmute or rewind when song is not playing (i.e unmute nextsong)
 if (songs[currentSong ].isMuted ()) {
@@ -153,7 +152,6 @@ void Stop(){
   songs[currentSong].rewind();
 } 
   }// end void stop 
-  
   void play-pause(){
     if( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
@@ -164,7 +162,7 @@ void Stop(){
        currentSong ++ ;
    }// no auto rewind like Loop 
 }// end void play-pause  
-  
+
  void Autoplay(){
  if (autoPlayOn=false )
 {
@@ -177,14 +175,11 @@ else {autoPlayOn=false;
     if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
-   //
-   //
     songs[currentSong].play()
   } else if ( currentSong == songs.length - 1){ // Error catch ArrayOutofBounds 
   currentSong = songs.length - songs.length;// Intention = 0
  currentSong.rewind();
- }
-  else { 
+ } else { 
      currentSong ++ ;
       currentSong.rewind();
      //Throws ArrayoutofBounds 
@@ -194,9 +189,7 @@ else {autoPlayOn=false;
     if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
-   //
-   //
-    songs[currentSong].play()
+    songs[currentSong].play();
   } else if ( currentSong == songs.length + 1){ // Error catch ArrayOutofBounds 
   currentSong = songs.length + songs.length;// Intention = 0
  currentSong.rewind();
