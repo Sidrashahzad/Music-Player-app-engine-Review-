@@ -19,18 +19,22 @@ void setup(){
   pauseX2 = pauseStartDrawX + pauseWidth*1/2;
   pauseY2 = pauseY1;
   pauseHeight = appHeight * pauseScaleHeight;
-  //
-  stopX =  pauseStartDrawX  - (appWidth*14/30);
-  stopY = pauseY1;
-  stopWidth = pauseHeight;
-  stopHeight = pauseHeight;
-//
+  
   playX1 =  pauseX1;
   playY1 =  pauseStartDrawY ;
   playX2 = pauseX1; 
   playY2 =  pauseStartDrawY + pauseHeight;
   playX3 =  pauseX2 + pauseWidth;
   playY3 =   pauseY2 + (appHeight*3/30); 
+  
+   backX1 =   pauseStartDrawX  - (appWidth*14/30);
+   backY1 = playY3 ;
+   backX2 =  pauseStartDrawX  - (appWidth*11.8/30);
+   backY2 = pauseY1 ;
+   backX3 =  pauseStartDrawX  - (appWidth*11.8/30);
+   backY3 = pauseY1 + pauseHeight;
+  //
+ 
   //
   reverseX1 =  pauseStartDrawX  - (appWidth*6/30) ; 
   reverseY1 = pauseStartDrawY;
@@ -74,7 +78,7 @@ void setup(){
  previousX3 = previousX1 - pauseWidth - pauseWidth;
  previousY3 = nextY3;
 //
-loopOnceX = stopX + pauseWidth + pauseWidth ;
+loopOnceX = backX1 + pauseWidth + pauseWidth ;
 loopOnceY = nextY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;

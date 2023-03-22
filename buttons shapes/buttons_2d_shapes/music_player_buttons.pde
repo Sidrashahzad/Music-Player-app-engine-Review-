@@ -1,7 +1,7 @@
 //global variable
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
-float stopX, stopY, stopWidth, stopHeight;
+float  backX1, backY1, backX2, backY2, backX3, backY3;
 float playX1, playY1, playX2, playY2,playX3, playY3;
 float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6;
@@ -27,7 +27,7 @@ color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode
 
  void drawMusicButtons(){
    drawPauseButton();
-   drawStopButton();
+    drawBackButton();
     drawPlayButton();
     drawForwardButton();
     drawReverseButton();
@@ -45,9 +45,10 @@ color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode
  rect(pauseX2, pauseY2,pauseWidth ,pauseHeight);
 }// end pause 
 //
-void drawStopButton(){
+void drawBackButton(){
   fill(blue2);// ternary operator 
-rect( stopX, stopY, stopWidth, stopHeight );
+//rect( backX, backY, backWidth, backHeight );
+triangle(backX1, backY1, backX2, backY2, backX3, backY3);
 fill( resetcolourDaymode );
 } // void stop
 //

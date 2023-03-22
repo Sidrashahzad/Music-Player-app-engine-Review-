@@ -1,6 +1,6 @@
 // global variables
 Minim minim; //creates object to access all functions
-Audio player[] songs = new AudioPlayer[3]; //creates playlist 
+Audio player[] songs = new AudioPlayer[2]; //creates playlist 
 //Audio player[] soundeffects = new AudioPlayer[2]; 
 String path, Bonfire, Caramalized;
 int currentSong = 0;
