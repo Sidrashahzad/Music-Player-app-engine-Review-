@@ -77,7 +77,7 @@ void draw(){
 //
 if (mouseX >=  pauseX1 && mouseX<= pauseX1+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight)  // pause
 { 
-  println("Hovering over pause");
+  println("Hovering over play-pause");
  } else { 
    println("") ; 
  }
@@ -157,7 +157,7 @@ if (mouseX >=  backX && mouseX<= backX+pausewidth2 && mouseY>= pauseY1 && mouseY
 //
 if (mouseX >=  reverseX3 && mouseX<= reverseX3+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight) println("reverse Pressed");  // reverse 
 //
-if (mouseX >=  pauseX1 && mouseX<= pauseX1+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight) println("pause Pressed");   // pause
+if (mouseX >=  pauseX1 && mouseX<= pauseX1+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight) println("play-pause Pressed");   // pause
 //
 if (mouseX >=  forwardX1 && mouseX<= forwardX1+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight) println("forward Pressed");   // forward 
 //
