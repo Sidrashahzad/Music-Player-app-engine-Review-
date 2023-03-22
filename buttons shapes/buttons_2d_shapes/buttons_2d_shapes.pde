@@ -27,27 +27,27 @@ void setup(){
   playX3 =  pauseX2 + pauseWidth;
   playY3 =   pauseY2 + (appHeight*3/30); 
   
-   backX1 =   pauseStartDrawX  - (appWidth*14/30);
+   backX1 =   pauseStartDrawX  - (appWidth*13.5/30);
    backY1 = playY3 ;
-   backX2 =  pauseStartDrawX  - (appWidth*11.8/30);
+   backX2 =  pauseStartDrawX  - (appWidth*10.5/30);
    backY2 = pauseY1 ;
-   backX3 =  pauseStartDrawX  - (appWidth*11.8/30);
+   backX3 =  pauseStartDrawX  - (appWidth*10.5/30);
    backY3 = pauseY1 + pauseHeight;
   //
  
   //
-  reverseX1 =  pauseStartDrawX  - (appWidth*6/30) ; 
+  reverseX1 =  pauseStartDrawX  - (appWidth*5.5/30) ; 
   reverseY1 = pauseStartDrawY;
-  reverseX2 =  pauseStartDrawX  - (appWidth*6/30);
+  reverseX2 =  pauseStartDrawX  - (appWidth*5.5/30);
   reverseY2 =  pauseStartDrawY + pauseHeight;
-  reverseX3= pauseStartDrawX  - (appWidth*8/30);
+  reverseX3= pauseStartDrawX  - (appWidth*7.5/30);
   reverseY3 = playY3;
 //
-  reverseX4 =  pauseStartDrawX  - (appWidth*4/30) ;
+  reverseX4 =  pauseStartDrawX  - (appWidth*3.7/30) ;
   reverseY4 = pauseStartDrawY;
-  reverseX5 =  pauseStartDrawX  - (appWidth*4/30) ;
+  reverseX5 =  pauseStartDrawX  - (appWidth*3.7/30) ;
   reverseY5 =  pauseStartDrawY + pauseHeight;  
-  reverseX6 = pauseStartDrawX  - (appWidth*6/30);
+  reverseX6 = pauseStartDrawX  - (appWidth*5.5/30);
   reverseY6 = playY3;
  //
  forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
@@ -78,7 +78,7 @@ void setup(){
  previousX3 = previousX1 - pauseWidth - pauseWidth;
  previousY3 = nextY3;
 //
-loopOnceX = backX1 + pauseWidth + pauseWidth ;
+loopOnceX = backX1  + pauseWidth + pauseWidth ;
 loopOnceY = nextY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
