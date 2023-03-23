@@ -93,7 +93,7 @@ triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTri
 }// end loop once 
 //
 void drawLoopInfinite() {
-rect(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
+ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
 }// end loop infinite 
 //
 void drawloopPlaylist(){

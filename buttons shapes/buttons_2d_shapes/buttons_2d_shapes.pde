@@ -93,30 +93,30 @@ stopY1 = pauseY1 + pauseHeight + pauseWidth;
 stopWidth = pauseHeight;
 stopHeight = pauseHeight;
  
-/*
- previousX1 =  playX3 - pauseWidth - pauseWidth ;
- previousY1 = nextY1;
- previousX2 =  playX3 - pauseWidth - pauseWidth;
- previousY2 = nextY2;
- previousX3 = previousX1 - pauseWidth - pauseWidth;
- previousY3 = nextY3; 
-//
-loopOnceX = backX1  + pauseWidth + pauseWidth ;
-loopOnceY = nextY1 + pauseWidth + pauseWidth;
+ loopOnceX = backRectX + pauseWidth + pauseWidth ;
+loopOnceY = stopY1 + pauseWidth + pauseWidth;
 loopOnceWidth = pauseHeight;
 loopOnceHeight = pauseHeight;
-//
+
 loopOnceX2 = loopOnceX;
 loopOnceY2 = loopOnceY ;
 loopOnce2Width = pauseHeight - pauseWidth;
 loopOnce2Height = pauseHeight - pauseWidth;
-//
- loopOnceTriX1 = loopOnce2Width + pauseWidth;
+
+loopOnceTriX1 = loopOnce2Width + pauseWidth + pauseWidth;
  loopOnceTriY1 = loopOnceY;
- loopOnceTriX2 = loopOnceWidth + pauseWidth;
+ loopOnceTriX2 = loopOnceWidth + pauseWidth + pauseWidth;
  loopOnceTriY2 = loopOnceY2;
  loopOnceTriX3 = loopOnceX + pauseWidth;
- loopOnceTriY3 =  nextY1 + pauseWidth;
+ loopOnceTriY3 = stopY1+ pauseWidth;
+
+loopInfiniteX =  reverseX3 + pauseWidth + pauseWidth;
+loopInfiniteY = loopOnceY;
+loopInfiniteWidth = pauseHeight;
+loopInfiniteHeight = pauseHeight;
+/*
+//
+ 
 //
 loopInfiniteX =  reverseX3;
 loopInfiniteY = nextY1;
