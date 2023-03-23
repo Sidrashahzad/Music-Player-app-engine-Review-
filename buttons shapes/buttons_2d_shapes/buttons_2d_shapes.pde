@@ -27,13 +27,6 @@ void setup(){
   playX3 =  pauseX2 + pauseWidth;
   playY3 =   pauseY2 + (appHeight*3/30); 
   
-   backX1 =   pauseStartDrawX  - (appWidth*13.5/30);
-   backY1 = playY3 ;
-   backX2 =  pauseStartDrawX  - (appWidth*10.5/30);
-   backY2 = pauseY1 ;
-   backX3 =  pauseStartDrawX  - (appWidth*10.5/30);
-   backY3 = pauseY1 + pauseHeight;
-  //
  
   //
   reverseX1 =  pauseStartDrawX  - (appWidth*5.5/30) ; 
@@ -49,6 +42,18 @@ void setup(){
   reverseY5 =  pauseStartDrawY + pauseHeight;  
   reverseX6 = pauseStartDrawX  - (appWidth*5.5/30);
   reverseY6 = playY3;
+  
+  backX1 =   pauseStartDrawX  - (appWidth*12/30);
+  backY1 = playY3 ;
+  backX2 =  pauseStartDrawX  - (appWidth*9.5/30);
+  backY2 = pauseY1 ;
+  backX3 =  pauseStartDrawX  - (appWidth*9.5/30);
+  backY3 = pauseY1 + pauseHeight;
+  //
+ backRectX = pauseStartDrawX  - (appWidth*13/30);
+ backRectY = pauseY1;
+ backRectWidth = pauseWidth; 
+ backRectHeight = pauseHeight;
  //
  forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY1 =  pauseStartDrawY; 
@@ -63,20 +68,38 @@ void setup(){
  forwardY5 =  pauseStartDrawY + pauseHeight; 
  forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*6/30);
  forwardY6 = playY3;
-//
- nextX1 = pauseX2 ;
- nextY1 = pauseHeight + (appHeight * 15/30);
- nextX2 = pauseX2;
+/*
+muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
+muteY = pauseY1;
+muteWidth = pauseHeight;
+muteHeight = pauseHeight;*/
+
+
+ nextX1 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30) ;
+ nextY1 = pauseY1;
+ nextX2 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
  nextY2 = nextY1 + pauseHeight ;
- nextX3 = pauseX2 + pauseWidth + pauseWidth;
- nextY3 = pauseHeight + (appHeight * 17.5/30);
-//
+ nextX3 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*10.5/30);
+ nextY3 = playY3 ;
+ 
+  
+ nextrectX = nextX3;
+ nextrectY = nextY1;
+ nextrectWidth = pauseWidth;
+ nextrectheight = pauseHeight;
+
+stopX1 = pauseX1; 
+stopY1 = pauseY1 + pauseHeight + pauseWidth;
+stopWidth = pauseHeight;
+stopHeight = pauseHeight;
+ 
+/*
  previousX1 =  playX3 - pauseWidth - pauseWidth ;
  previousY1 = nextY1;
  previousX2 =  playX3 - pauseWidth - pauseWidth;
  previousY2 = nextY2;
  previousX3 = previousX1 - pauseWidth - pauseWidth;
- previousY3 = nextY3;
+ previousY3 = nextY3; 
 //
 loopOnceX = backX1  + pauseWidth + pauseWidth ;
 loopOnceY = nextY1 + pauseWidth + pauseWidth;
@@ -104,11 +127,9 @@ loopInfiniteHeight = pauseHeight;
  loopPlaylistY = nextY1;
  loopPlaylistWidth = pauseHeight;
  loopPlaylistHeight = pauseHeight;
+ */
 //
-muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
-muteY = pauseY1;
-muteWidth = pauseHeight;
-muteHeight = pauseHeight;
+
 //
 
 }

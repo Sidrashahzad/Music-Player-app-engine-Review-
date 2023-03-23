@@ -2,14 +2,15 @@
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
 float  backX1, backY1, backX2, backY2, backX3, backY3;
+float  backRectX, backRectY, backRectWidth, backRectHeight;
 float playX1, playY1, playX2, playY2,playX3, playY3;
 float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6;
 float reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3;
 float reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6;
 float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3;
-float nextrectX1, nextrectY1, nextrectWidth, nextrectheight;
-float previousX1, previousY1, previousX2, previousY2, previousX3, previousY3;
+float nextrectX, nextrectY, nextrectWidth, nextrectheight;
+float stopX1, stopY1, stopWidth, stopHeight;
 float looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight;
 float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
 float loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height;
@@ -32,7 +33,7 @@ color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode
     drawForwardButton();
     drawReverseButton();
     drawNextButton();
-    drawpreviousButton();
+    drawStopButton();
     drawlooponceButton();
     drawLoopInfinite();
     drawloopPlaylist();
@@ -49,6 +50,7 @@ void drawBackButton(){
   fill(blue2);// ternary operator 
 //rect( backX, backY, backWidth, backHeight );
 triangle(backX1, backY1, backX2, backY2, backX3, backY3);
+rect( backRectX, backRectY, backRectWidth, backRectHeight);
 fill( resetcolourDaymode );
 } // void stop
 //
@@ -71,13 +73,15 @@ fill( resetcolourDaymode );
 }// end reverse 
 //
 void drawNextButton(){
+  fill(blue2);
 triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
-//rect(nextrectX1, nextrectY1, nextrectWidth, nextrectheight);
+rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);
+fill( resetcolourDaymode );
 }// end next 
 //
-void drawpreviousButton(){
-triangle(previousX1, previousY1, previousX2, previousY2, previousX3, previousY3);
-}// end previous button
+void drawStopButton(){//end stopButton
+rect(stopX1, stopY1, stopWidth, stopHeight);
+}
 //
 void drawlooponceButton(){
 rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
