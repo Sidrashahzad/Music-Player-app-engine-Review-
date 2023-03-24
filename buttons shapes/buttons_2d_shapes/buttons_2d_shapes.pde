@@ -47,7 +47,7 @@ void setup(){
   reverseX6 = pauseStartDrawX  - (appWidth*5.5/30);
   reverseY6 = playY3;
   
-    backButtonWidth = pauseHeight;
+  backButtonWidth = pauseHeight;
 
   backX1 =   pauseStartDrawX  - (appWidth*12/30);
   backY1 = playY3 ;
