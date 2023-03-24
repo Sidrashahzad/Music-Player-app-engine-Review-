@@ -1,8 +1,10 @@
 //global variable
+float pausebuttonX, pausewidth2;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
 float  backX1, backY1, backX2, backY2, backX3, backY3;
 float  backRectX, backRectY, backRectWidth, backRectHeight;
+float backButtonWidth;
 float playX1, playY1, playX2, playY2,playX3, playY3;
 float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6;
@@ -16,6 +18,8 @@ float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
 float loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height;
 float loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3;
 float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
+float loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2;
+float loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3;
 float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
@@ -25,6 +29,7 @@ color blue2 = #8C9BE8;
 
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
+color resetStroke = #000000;
 
  void drawMusicButtons(){
    drawPauseButton();
@@ -42,13 +47,22 @@ color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode
  //
  // end music buttons
  void drawPauseButton(){
- rect(pauseX1, pauseY1,pauseWidth ,pauseHeight );
- rect(pauseX2, pauseY2,pauseWidth ,pauseHeight);
+   fill(grey);
+  noStroke();
+ rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
+ fill(resetcolourDaymode );
+ stroke(resetStroke);
+ rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
+ rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
 }// end pause 
 //
 void drawBackButton(){
-  fill(blue2);// ternary operator 
-//rect( backX, backY, backWidth, backHeight );
+  fill(grey);// ternary operator 
+ noStroke();
+rect( backRectX, backRectY, backButtonWidth, backRectHeight);
+ stroke(resetStroke);
+fill( resetcolourDaymode );
+fill(blue2);
 triangle(backX1, backY1, backX2, backY2, backX3, backY3);
 rect( backRectX, backRectY, backRectWidth, backRectHeight);
 fill( resetcolourDaymode );
@@ -94,6 +108,10 @@ triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTri
 //
 void drawLoopInfinite() {
 ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
+fill(grey);
+ellipse(loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2);
+fill(resetcolourDaymode);
+triangle(loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3);
 }// end loop infinite 
 //
 void drawloopPlaylist(){

@@ -20,6 +20,10 @@ void setup(){
   pauseY2 = pauseY1;
   pauseHeight = appHeight * pauseScaleHeight;
   
+  
+  pausebuttonX = pauseX1 - (pauseWidth*1/4);
+  pausewidth2 = pauseHeight;
+  
   playX1 =  pauseX1;
   playY1 =  pauseStartDrawY ;
   playX2 = pauseX1; 
@@ -43,6 +47,8 @@ void setup(){
   reverseX6 = pauseStartDrawX  - (appWidth*5.5/30);
   reverseY6 = playY3;
   
+    backButtonWidth = pauseHeight;
+
   backX1 =   pauseStartDrawX  - (appWidth*12/30);
   backY1 = playY3 ;
   backX2 =  pauseStartDrawX  - (appWidth*9.5/30);
@@ -50,10 +56,17 @@ void setup(){
   backX3 =  pauseStartDrawX  - (appWidth*9.5/30);
   backY3 = pauseY1 + pauseHeight;
   //
+  
  backRectX = pauseStartDrawX  - (appWidth*13/30);
  backRectY = pauseY1;
  backRectWidth = pauseWidth; 
  backRectHeight = pauseHeight;
+ 
+ 
+ /* backbuttonX =  pauseStartDrawX  - (appWidth*13.5/30);
+  backY = pauseY1;
+  backWidth = pauseHeight;
+  backHeight = pauseHeight;*/
  //
  forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY1 =  pauseStartDrawY; 
@@ -68,12 +81,6 @@ void setup(){
  forwardY5 =  pauseStartDrawY + pauseHeight; 
  forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*6/30);
  forwardY6 = playY3;
-/*
-muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
-muteY = pauseY1;
-muteWidth = pauseHeight;
-muteHeight = pauseHeight;*/
-
 
  nextX1 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30) ;
  nextY1 = pauseY1;
@@ -88,7 +95,7 @@ muteHeight = pauseHeight;*/
  nextrectWidth = pauseWidth;
  nextrectheight = pauseHeight;
 
-stopX1 = pauseX1; 
+stopX1 = pausebuttonX; 
 stopY1 = pauseY1 + pauseHeight + pauseWidth;
 stopWidth = pauseHeight;
 stopHeight = pauseHeight;
@@ -108,21 +115,36 @@ loopOnceTriX1 = loopOnce2Width + pauseWidth + pauseWidth;
  loopOnceTriX2 = loopOnceWidth + pauseWidth + pauseWidth;
  loopOnceTriY2 = loopOnceY2;
  loopOnceTriX3 = loopOnceX + pauseWidth;
- loopOnceTriY3 = stopY1+ pauseWidth;
+ loopOnceTriY3 = stopY1 + pauseWidth;
 
 loopInfiniteX =  reverseX3 + pauseWidth + pauseWidth;
 loopInfiniteY = loopOnceY;
 loopInfiniteWidth = pauseHeight;
 loopInfiniteHeight = pauseHeight;
-/*
+
 //
  
-//
-loopInfiniteX =  reverseX3;
-loopInfiniteY = nextY1;
-loopInfiniteWidth = pauseHeight;
-loopInfiniteHeight = pauseHeight;
-//
+
+loopInfiniteX2 =  reverseX3 + pauseWidth + pauseWidth;
+loopInfiniteY2 = loopOnceY;
+loopInfinitewidth2 = pauseHeight - pauseWidth;
+loopInfiniteheight2 = pauseHeight - pauseWidth;
+
+loopinfinTriX1 =  loopInfiniteX  + pauseWidth ;
+loopinfinTriY1 = loopInfiniteY;
+loopinfinTriX2 =  loopInfiniteX2 + pauseWidth + pauseWidth;
+loopinfinTriY2 = loopInfiniteY2;
+loopinfinTriX3 = loopInfiniteX + pauseWidth;
+loopinfinTriY3 = stopY1 + pauseWidth; 
+
+/*
+muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
+muteY = pauseY1;
+muteWidth = pauseHeight;
+muteHeight = pauseHeight;*/
+
+
+/*
  loopPlaylistX = forwardX1;
  loopPlaylistY = nextY1;
  loopPlaylistWidth = pauseHeight;
@@ -135,7 +157,19 @@ loopInfiniteHeight = pauseHeight;
 }
 void draw(){
 drawMusicButtons();
-
+if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight)  // pause
+{ 
+  println("Hovering over play-pause");
+ } else { 
+   println("") ; 
+ }
+ 
+  if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)
+ { 
+  println("Hovering over Back");
+ } else { 
+   println("") ; 
+ }
 }
 void keyPressed(){}
 void mousePressed(){}
