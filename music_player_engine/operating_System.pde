@@ -4,7 +4,6 @@ also see Music Subprogram
 // GLoabal variables
 String Path = new File("").getAbsolutePath();// exported program
 String directory = "//FS-052/studuser$/Gr11/s.shahzad3/My Documents/GitHub/Music-Player-app-engine-Review-/music_player_engine" ; // not exported 
-float pauseX1, pauseY1,pauseX2,PauseY2,pauseWidth,pauseHeight
 //
 void setupOS_level(){
   File anyDirectory = new File(path);// used if not export 

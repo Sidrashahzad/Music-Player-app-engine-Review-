@@ -8,9 +8,12 @@ float backButtonWidth;
 float playX1, playY1, playX2, playY2,playX3, playY3;
 float forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3;
 float forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6;
+float forwardrectX, forwardrectY, forwardrectWidth;
 float reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3;
 float reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6;
+Float reverseRectX, reverseRectY, reverseRectWidth;
 float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3;
+float nextbuttonrectX, nextbuttonrectY, nextbuttonrectWidth;
 float nextrectX, nextrectY, nextrectWidth, nextrectheight;
 float stopX1, stopY1, stopWidth, stopHeight;
 float looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight;
@@ -73,6 +76,11 @@ void drawPlayButton(){
 }// end play 
 //
 void drawForwardButton(){
+    fill(grey);// ternary operator 
+      noStroke();
+  rect(forwardrectX, forwardrectY, forwardrectWidth, pauseHeight);
+  stroke(resetStroke);
+  fill( resetcolourDaymode );
   fill(blue);
 triangle(forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
 triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
@@ -80,6 +88,11 @@ fill( resetcolourDaymode );
 }// end forward 
 //
 void drawReverseButton(){
+  fill(grey);// ternary operator 
+  noStroke();
+  rect(reverseRectX, reverseRectY, reverseRectWidth, pauseHeight );
+   stroke(resetStroke);
+fill( resetcolourDaymode );
 fill(blue);
 triangle(reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3);
 triangle(reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6);
@@ -87,6 +100,11 @@ fill( resetcolourDaymode );
 }// end reverse 
 //
 void drawNextButton(){
+  fill(grey);// ternary operator 
+ noStroke();
+  rect(nextbuttonrectX, nextbuttonrectY, nextbuttonrectWidth, pauseHeight);
+   stroke(resetStroke);
+fill( resetcolourDaymode );
   fill(blue2);
 triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
 rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);

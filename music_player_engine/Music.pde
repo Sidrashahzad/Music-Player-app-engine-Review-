@@ -1,10 +1,11 @@
-// global variables
+//global variables
 Minim minim; //creates object to access all functions
-Audio player[] songs = new AudioPlayer[2]; //creates playlist 
-//Audio player[] soundeffects = new AudioPlayer[2]; 
-String path, Bonfire, Caramalized;
+AudioPlayer[] songs = new AudioPlayer[2]; //creates playlist 
+//AudioPlayer[] soundeffects = new AudioPlayer[2]; 
+String pathway, Bonfire, Caramalized;
 int currentSong = 0;
-Boolean autoPlayOn=false; 
+Boolean autoPlayOn = false; 
+//
 void setupMusic(){
   
 minim = new Minim (this);// load music data directoy, also from project folder
@@ -22,8 +23,8 @@ songs[1] = minim.loadFile( path + Caramalized) ;
 //
 void drawMusic(){
   //
-  println("current Song Position:", songs[currentSong ].position());
-println("\tEnd of Song:",songs[currentSong ].length() );
+  println("current Song Position:", songs[currentSong].position());
+println("\tEnd of Song:",songs[currentSong].length() );
 //
 autoPlayMusic();
 //
@@ -32,38 +33,38 @@ autoPlayMusic();
 void mousePressedMusic(){}// end  mousePressedMusic
 
 void keyPressedMusic(){ //<>//
-// music key board shorcut  
+// music key board shorcut 
+/*
 if ( key == 'm' || key == 'M'){
   mute();
  }// End Mute Button
 // forward / reverse buttons
 if ( key == 'f' || key == 'F'){
- void forward();
+  forward();
 }// end forward 
   if(key == 'r' || key == 'R') {
     Reverse();
   }// end reverse 
   // single loop
-  if ( key == '1' )  {
+  if ( key == '1' ){
     singleloop();
   }//end single loop 
-  
   //loop infinite
-   if ( key <= '9' && key ! = 1)  {
+   if ( key <= '9' && key ! = '1' ){
    infiniteloop();
    }// end loop infinite 
   //STOP
   if ( key == 's' || key == 'S'){ 
-     Stop();
-  }
+Stop();
+  }*/
   //end stop 
  // play-pause
     if (key == 'p' || key =='P'){  
-   play-pause();
-}//end play-pause Button
-
+playPause();
+    }//end play-pause Button
+/*
 // Autoplay button 
-if (key == 'o'|| key == 'O') {
+if (key == 'o'|| key == 'O'){
  Autoplay();
 } // end Autoplay 
 
@@ -78,18 +79,21 @@ if (key == 'o'|| key == 'O') {
    if ( key == 'b' || key == 'B'){
    previous();
    }// end previous button 
+   */
 }// end keyPressedMusic
 
 void concatenationofMusicFiles(){
-path = "data/"; 
+pathway = "Music/"; 
 Bonfire = "Bonfire - An Jone.mp3";
 Caramalized = "Carmelized - Craig MacArthur.mp3" ;
 Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
 
 } // end  concatenation
+
 void autoPlayMusic(){
 // Auto play Section, see subprogam 
-if ( autoPlayOn )  {
+/*
+if ( autoPlayOn ); {
 //if (){} if else () {} else {}
 // Ex .position() >= .length(), then rewind(), currentSong += 1, .play()
 // Ex2 .isplaying(), when false rewind(), currentSong += , .play 
@@ -103,6 +107,7 @@ song[currentSong ].unmute();
  } else if ( songs[currentSong ].position() >= songs[currentSong ].length()*4/5 ) {
  // I finish smart muteButton 
  /* ERROR music player breaks if song finishes if rewind */
+ /*
  songs[currentSong].rewind();
  } else {
 song[currentSong].mute(); 
@@ -145,14 +150,14 @@ void Stop(){
   /* Possible for smarter STOP button
    include "soft pause" for first 15 sec of stop 
   include auto previous & next track if stop at the begining or end of file*/
-  
+  /*
    else if( songs[currentSong].position() <= songs[currentSong]. length()*1/10)
 {
   songs[currentSong].isPlaying();
   songs[currentSong].rewind();
-} 
+} */
   }// end void stop 
-  void play-pause(){
+  void playPause(){
     if( songs[currentSong].isPlaying() ) {
     songs[currentSong].pause();
   } else if (songs[currentSong].position() >= songs[currentSong].length()*9/10){ 
@@ -161,8 +166,8 @@ void Stop(){
     } else {
        currentSong ++ ;
    }// no auto rewind like Loop 
-}// end void play-pause  
-
+  }// end void play-pause  
+/*
  void Autoplay(){
  if (autoPlayOn=false )
 {
@@ -200,5 +205,5 @@ else {autoPlayOn=false;
      //Throws ArrayoutofBounds 
    }
    }// end void previous 
-  
+  */
 // end music subprogram

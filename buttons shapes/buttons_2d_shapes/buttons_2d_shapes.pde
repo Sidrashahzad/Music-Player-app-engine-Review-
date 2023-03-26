@@ -33,6 +33,7 @@ void setup(){
   
  
   //
+ 
   reverseX1 =  pauseStartDrawX  - (appWidth*5.5/30) ; 
   reverseY1 = pauseStartDrawY;
   reverseX2 =  pauseStartDrawX  - (appWidth*5.5/30);
@@ -40,12 +41,19 @@ void setup(){
   reverseX3= pauseStartDrawX  - (appWidth*7.5/30);
   reverseY3 = playY3;
 //
-  reverseX4 =  pauseStartDrawX  - (appWidth*3.7/30) ;
+
+
+  reverseX4 =  pauseStartDrawX  - (appWidth*3.8/30) ;
   reverseY4 = pauseStartDrawY;
-  reverseX5 =  pauseStartDrawX  - (appWidth*3.7/30) ;
+  reverseX5 =  pauseStartDrawX  - (appWidth*3.8/30) ;
   reverseY5 =  pauseStartDrawY + pauseHeight;  
   reverseX6 = pauseStartDrawX  - (appWidth*5.5/30);
   reverseY6 = playY3;
+  
+   reverseRectX = reverseX3;
+reverseRectY = reverseY1;
+reverseRectWidth = pauseHeight;
+  
   
   backButtonWidth = pauseHeight;
 
@@ -68,20 +76,26 @@ void setup(){
   backWidth = pauseHeight;
   backHeight = pauseHeight;*/
  //
+ 
  forwardX1  =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY1 =  pauseStartDrawY; 
  forwardX2 =   pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*2/30);
  forwardY2 =  pauseStartDrawY + pauseHeight; 
  forwardX3 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY3 = playY3;
+
  //
  forwardX4 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY4 = pauseStartDrawY; 
  forwardX5 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*4/30);
  forwardY5 =  pauseStartDrawY + pauseHeight; 
- forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*6/30);
+ forwardX6 =  pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*5.7/30);
  forwardY6 = playY3;
-
+ 
+ forwardrectX = forwardX1;
+ forwardrectY = forwardY1;
+ forwardrectWidth = pauseHeight;
+ 
  nextX1 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30) ;
  nextY1 = pauseY1;
  nextX2 = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
@@ -94,6 +108,10 @@ void setup(){
  nextrectY = nextY1;
  nextrectWidth = pauseWidth;
  nextrectheight = pauseHeight;
+
+nextbuttonrectX = nextX1;
+nextbuttonrectY = nextY1;
+nextbuttonrectWidth = pauseHeight;
 
 stopX1 = pausebuttonX; 
 stopY1 = pauseY1 + pauseHeight + pauseWidth;
@@ -164,12 +182,43 @@ if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= p
    println("") ; 
  }
  
-  if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)
+  if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)//back
  { 
   println("Hovering over Back");
  } else { 
    println("") ; 
  }
+ 
+  
+  if (mouseX >=  reverseRectX && mouseX<=  reverseRectX+reverseRectWidth && mouseY>= reverseRectY && mouseY<= reverseRectY+pauseHeight) // revers
+ { 
+  println("Hovering over rewind");
+ } else { 
+   println("") ; 
+ }
+ 
+  if (mouseX >=  forwardrectX && mouseX<=  forwardrectX+forwardrectWidth && mouseY>= forwardrectY && mouseY<=  forwardrectY+pauseHeight) 
+ { 
+  println("Hovering over forward");
+ } else { 
+   println("") ; 
+ }
+ 
+ if (mouseX >=  nextbuttonrectX && mouseX<=  nextbuttonrectX+nextbuttonrectWidth && mouseY>= nextbuttonrectY && mouseY<=  nextbuttonrectY+pauseHeight)// next
+ { 
+  println("Hovering over next");
+ } else { 
+   println("") ; 
+ }
+ 
+  
+ if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
+ { 
+  println("Hovering over stop");
+ } else { 
+   println("") ; 
+ }
 }
+
 void keyPressed(){}
 void mousePressed(){}
