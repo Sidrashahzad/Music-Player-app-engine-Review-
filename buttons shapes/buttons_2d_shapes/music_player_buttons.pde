@@ -20,6 +20,7 @@ float looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight;
 float loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight;
 float loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height;
 float loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3;
+float loopinfinRectX,loopinfinRectY, loopinfinRectWidth, loopinfinRectHeight;
 float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
 float loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2;
 float loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3;
@@ -28,8 +29,7 @@ float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF;
-color blue2 = #8C9BE8;
-
+color blue2 = #8C9BE8 , hoverColor = blue2 ;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
 color resetStroke = #000000;
@@ -65,7 +65,7 @@ void drawBackButton(){
 rect( backRectX, backRectY, backButtonWidth, backRectHeight);
  stroke(resetStroke);
 fill( resetcolourDaymode );
-fill(blue2);
+fill(blue);
 triangle(backX1, backY1, backX2, backY2, backX3, backY3);
 rect( backRectX, backRectY, backRectWidth, backRectHeight);
 fill( resetcolourDaymode );
@@ -105,7 +105,7 @@ void drawNextButton(){
   rect(nextbuttonrectX, nextbuttonrectY, nextbuttonrectWidth, pauseHeight);
    stroke(resetStroke);
 fill( resetcolourDaymode );
-  fill(blue2);
+  fill(blue);
 triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
 rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);
 fill( resetcolourDaymode );
@@ -116,7 +116,11 @@ rect(stopX1, stopY1, stopWidth, stopHeight);
 }
 //
 void drawlooponceButton(){
+  fill(grey);// ternary operator 
+ noStroke();
 rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
+stroke(resetStroke);
+fill( resetcolourDaymode );
 ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
 fill(grey);
 ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
@@ -125,6 +129,11 @@ triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTri
 }// end loop once 
 //
 void drawLoopInfinite() {
+   fill(grey);// ternary operator 
+ noStroke();
+rect( loopinfinRectX,loopinfinRectY, loopinfinRectWidth, loopinfinRectHeight);
+stroke(resetStroke);
+fill( resetcolourDaymode );
 ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
 fill(grey);
 ellipse(loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2);

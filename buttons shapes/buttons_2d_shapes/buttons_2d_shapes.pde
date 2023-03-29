@@ -135,6 +135,13 @@ loopOnceTriX1 = loopOnce2Width + pauseWidth + pauseWidth;
  loopOnceTriX3 = loopOnceX + pauseWidth;
  loopOnceTriY3 = stopY1 + pauseWidth;
 
+looponceRectX = backRectX;
+looponceRectY =  stopY1;
+looponceRectwidth = pauseHeight ;
+looponceRectheight = pauseHeight;
+
+
+
 loopInfiniteX =  reverseX3 + pauseWidth + pauseWidth;
 loopInfiniteY = loopOnceY;
 loopInfiniteWidth = pauseHeight;
@@ -150,11 +157,16 @@ loopInfiniteheight2 = pauseHeight - pauseWidth;
 
 loopinfinTriX1 =  loopInfiniteX  + pauseWidth ;
 loopinfinTriY1 = loopInfiniteY;
-loopinfinTriX2 =  loopInfiniteX2 + pauseWidth + pauseWidth;
-loopinfinTriY2 = loopInfiniteY2;
+loopinfinTriX2 =  loopInfiniteX + pauseWidth + pauseWidth;
+loopinfinTriY2 = loopInfiniteY;
 loopinfinTriX3 = loopInfiniteX + pauseWidth;
 loopinfinTriY3 = stopY1 + pauseWidth; 
 
+ 
+ loopinfinRectX = reverseX3;
+ loopinfinRectY = stopY1;
+ loopinfinRectWidth = pauseHeight ;
+ loopinfinRectHeight = pauseHeight ;
 /*
 muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
 muteY = pauseY1;
@@ -178,6 +190,7 @@ drawMusicButtons();
 if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight)  // pause
 { 
   println("Hovering over play-pause");
+  
  } else { 
    println("") ; 
  }
@@ -218,6 +231,21 @@ if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= p
  } else { 
    println("") ; 
  }
+ 
+if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight)// // looponce  
+ { 
+  println("Hovering over loop once");
+ } else { 
+   println("") ; 
+ } 
+ 
+ if (mouseX >=  loopinfinRectX && mouseX<=  loopinfinRectX+loopinfinRectWidth && mouseY>= loopinfinRectY && mouseY<=  loopinfinRectY+loopinfinRectHeight)// // loop infinite  
+ { 
+  println("Hovering over loop infinite");
+ } else { 
+   println("") ; 
+ } 
+ 
 }
 
 void keyPressed(){}

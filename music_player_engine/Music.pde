@@ -15,8 +15,8 @@ minim = new Minim (this);// load music data directoy, also from project folder
 // Reminder Fininsh OS_level to auto read pathway nd files (see operating system )
 //
 concatenationofMusicFiles(); 
-songs[0] = minim.loadFile( path + Bonfire) ;
-songs[1] = minim.loadFile( path + Caramalized) ;
+songs[0] = minim.loadFile( pathway + Bonfire) ;
+songs[1] = minim.loadFile( pathway + Caramalized) ;
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
 }// end setupMusic
@@ -24,28 +24,76 @@ songs[1] = minim.loadFile( path + Caramalized) ;
 void drawMusic(){
   //
   println("current Song Position:", songs[currentSong].position());
-println("\tEnd of Song:",songs[currentSong].length() );
+  println("\tEnd of Song:", songs[currentSong].length());
 //
-autoPlayMusic();
+//autoPlayMusic();
 //
 }//  end drawMusic
 
 void mousePressedMusic(){}// end  mousePressedMusic
 
 void keyPressedMusic(){ //<>//
-// music key board shorcut 
-/*
+// music key board shorcut
+ // play-pause
+    if (key == 'p' || key =='P'){  
+       if( songs[currentSong].isPlaying() ) {
+       songs[currentSong].pause();
+     } else {
+      songs[currentSong].play();
+       } 
+/*      else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10)
+      { 
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    } else {
+       currentSong ++ ;
+  } */
+     
+      // playPause();
+    }//end play-pause Button
+
 if ( key == 'm' || key == 'M'){
-  mute();
- }// End Mute Button
+ if (songs[currentSong ].isMuted ()) {
+songs[currentSong ].unmute();
+ } else if ( songs[currentSong ].position() >= songs[currentSong ].length()*4/5 ) {
+ // I finish smart muteButton 
+ /* ERROR music player breaks if song finishes if rewind */
+
+ songs[currentSong].rewind();
+ } else {
+songs[currentSong].mute(); 
+} /* else if { currentSong ++;
+  
+song [currentSong].unmute(); 
+  } */
+ }// end void mute
+  // mute();
+
 // forward / reverse buttons
-if ( key == 'f' || key == 'F'){
-  forward();
-}// end forward 
+
+if ( key == 'f' || key == 'F')
+{
+  songs[currentSong].skip(5000);// 1000 = 1sec
+} else if(songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) { 
+   songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    currentSong ++;
+  // i finish 
+} 
+ // forward();
+// end forward 
+/*
   if(key == 'r' || key == 'R') {
-    Reverse();
-  }// end reverse 
+    songs[currentSong].skip(-5000);
+  }else if (songs[currentSong].position() <= songs[currentSong]. length()*2/10){
+  songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    //currentSong--;// Error come back and fix 
+} 
+   // Reverse();
+  // end reverse 
   // single loop
+  p
   if ( key == '1' ){
     singleloop();
   }//end single loop 
@@ -58,10 +106,7 @@ if ( key == 'f' || key == 'F'){
 Stop();
   }*/
   //end stop 
- // play-pause
-    if (key == 'p' || key =='P'){  
-playPause();
-    }//end play-pause Button
+
 /*
 // Autoplay button 
 if (key == 'o'|| key == 'O'){
@@ -86,11 +131,30 @@ void concatenationofMusicFiles(){
 pathway = "Music/"; 
 Bonfire = "Bonfire - An Jone.mp3";
 Caramalized = "Carmelized - Craig MacArthur.mp3" ;
-Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
+//Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
 
 } // end  concatenation
 
-void autoPlayMusic(){
+
+
+/*
+ void playPause() {
+    if( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } 
+  else {
+      songs[currentSong].play();
+  }
+  
+  /* else if (songs[currentSong].position() >= songs[currentSong].length()*9/10){ 
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    } else {
+       currentSong ++ ;
+   }// no auto rewind like Loop 
+   
+  }// end void play-pause  
+void autoPlayMusic(){ */
 // Auto play Section, see subprogam 
 /*
 if ( autoPlayOn ); {
@@ -155,18 +219,9 @@ void Stop(){
 {
   songs[currentSong].isPlaying();
   songs[currentSong].rewind();
-} */
+} 
   }// end void stop 
-  void playPause(){
-    if( songs[currentSong].isPlaying() ) {
-    songs[currentSong].pause();
-  } else if (songs[currentSong].position() >= songs[currentSong].length()*9/10){ 
-    songs[currentSong].pause();
-    songs[currentSong].rewind();
-    } else {
-       currentSong ++ ;
-   }// no auto rewind like Loop 
-  }// end void play-pause  
+ */
 /*
  void Autoplay(){
  if (autoPlayOn=false )

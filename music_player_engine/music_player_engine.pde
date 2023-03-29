@@ -8,13 +8,15 @@ import ddf.minim.ugens.*;
 
 
 
+
+
 // global variables 
 //
 void setup(){
 //
 setupMusic();
 // 
-songs[currentSong ].loop(0);// channge index manually 
+songs[currentSong].loop(0);// channge index manually 
 //
 }// end setup 
 void draw(){
