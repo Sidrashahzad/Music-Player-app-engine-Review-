@@ -29,7 +29,7 @@ float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF;
-color blue2 = #8C9BE8 , hoverColor = blue2 ;
+color hoverColor, blue2 = #8C9BE8 ;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
 color resetStroke = #000000;
@@ -72,7 +72,9 @@ fill( resetcolourDaymode );
 } // void stop
 //
 void drawPlayButton(){
+  fill(hoverColor);
  triangle(playX1, playY1, playX2, playY2,playX3, playY3);
+ fill( resetcolourDaymode );
 }// end play 
 //
 void drawForwardButton(){
@@ -112,7 +114,9 @@ fill( resetcolourDaymode );
 }// end next 
 //
 void drawStopButton(){//end stopButton
+fill(hoverColor);
 rect(stopX1, stopY1, stopWidth, stopHeight);
+fill( resetcolourDaymode );
 }
 //
 void drawlooponceButton(){

@@ -187,11 +187,13 @@ muteHeight = pauseHeight;*/
 }
 void draw(){
 drawMusicButtons();
-if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight)  // pause
+println(mouseX, mouseY)  ;
+if (mouseX >= playX1  && mouseX>= playX2 &&  mouseX<= playX3 && mouseY>= playY1  && mouseY>= playY2 && mouseY<= playY3 )  // pause
 { 
+     hoverColor = blue;
   println("Hovering over play-pause");
-  
  } else { 
+   hoverColor = blue2;
    println("") ; 
  }
  
@@ -227,9 +229,13 @@ if (mouseX >=  pausebuttonX && mouseX<= pausebuttonX + pausewidth2 && mouseY>= p
   
  if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
  { 
-  println("Hovering over stop");
+   hoverColor = blue;
+ println("Hovering over stop");
+
  } else { 
-   println("") ; 
+    hoverColor = blue2;
+  println("") ; 
+
  }
  
 if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight)// // looponce  
