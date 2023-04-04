@@ -10,12 +10,12 @@ void setup() {
     size(800,500);//height & width
    onerectDraw();
   textSetup();
-  
+  textDraw();
 }//end setup
 
 void draw() {
   
-  textDraw();
+  
 }// end draw
 
 void keyPressed() {
@@ -25,3 +25,7 @@ void keyPressed() {
 void mousePressed() {
   textmousePressed();
 }// end mousePressed
+void flatText(){
+
+  
+}
