@@ -1,7 +1,7 @@
 //text is put here
 void onerectDraw(){
-float pausebuttonX, pausewidth2;
-float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
+float pausebuttonX, pauseY1, pausewidth2, pauseHeight;
+float pauseX1,pauseX2, pauseY2, pauseWidth;
 float pauseScaleWidth, pauseScaleHeight;
 //float playX1, playY1, playX2, playY2,playX3, playY3;
 int appWidth, appHeight;
@@ -25,7 +25,8 @@ int appWidth, appHeight;
   pauseX2 = pauseStartDrawX + pauseWidth*1/2;
   pauseY2 = pauseY1;
   pauseHeight = appHeight * pauseScaleHeight;
-    pausebuttonX = pauseX1 - (pauseWidth*1/4);
+  
+  pausebuttonX = pauseX1 - (pauseWidth*1/4);
   pausewidth2 = pauseHeight;
   /*
    playX1 =  pauseX1;
@@ -35,7 +36,9 @@ int appWidth, appHeight;
   playX3 =  pauseX2 + pauseWidth;
   playY3 =   pauseY2 + (appHeight*3/30); 
 */
- rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
+
 // triangle(playX1, playY1, playX2, playY2,playX3, playY3);
-/* rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
- rect(pauseX2, pauseY2,pauseWidth, pauseHeight);*/}
+ rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
+ rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
+  rect( pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button 
+}

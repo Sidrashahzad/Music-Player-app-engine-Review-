@@ -1,6 +1,6 @@
 //global variables
 PFont titleFont;
-color ink, whiteInk = #FFFFFF ;
+color ink, blueink = #1638B9 ,whiteInk = #FFFFFF ;//not night mode friendly 
 int alignHorizontal, alignVertical;
 String string = " Anything ";
 void textSetup() {
@@ -17,19 +17,19 @@ void pretextDraw(float height, color ink, int alignHorizontal, int alignVertical
 void textDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont titleFont, String string, float rectX, float rectY, float rectwidth, float rectHeight  ) {
   pretextDraw( height, ink, alignHorizontal, alignVertical, titleFont );// passing parameters
   textSize(textCalculator(height, string, rectWidth));
-  text(string, rectX, rectY, rectwidth, rectHeight);
+  text(string, rectX, rectY, rectWidth, rectHeight);
   textReset();
 }// end textDraw
 void textReset() {
   fill(whiteInk);
 }// end textreset
 
-float textCalculator(float size, String string, float rectWidth);
+float textCalculator(float size, String string, float rectWidth );
 {
   textSize(size);
-  while (textWidth(string)> rectWidth)
+  while (textWidth(string)> rectWidth )
   {
-    size = size * 0.99 ;// think o fdifferent formula
+    size = size * 0.99;// think o fdifferent formula
     textSize(size);
   }
   return;

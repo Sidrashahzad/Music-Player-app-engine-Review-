@@ -10,7 +10,8 @@ void setup() {
     size(800,500);//height & width
    onerectDraw();
   textSetup();
-  textDraw();
+  //population of local variables 
+  textDraw( height, blueink, CENTER, CENTER, titleFont, string, pausebuttonX, pauseY1, pausewidth2, pauseHeight );
 }//end setup
 
 void draw() {
