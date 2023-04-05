@@ -1,7 +1,9 @@
 //text is put here
-void onerectDraw(){
-float pausebuttonX, pauseY1, pausewidth2, pauseHeight;
 float pauseX1,pauseX2, pauseY2, pauseWidth;
+float pausebuttonX, pauseY1, pausewidth2, pauseHeight;
+void onerectDraw(){
+
+
 float pauseScaleWidth, pauseScaleHeight;
 //float playX1, playY1, playX2, playY2,playX3, playY3;
 int appWidth, appHeight;
@@ -26,7 +28,7 @@ int appWidth, appHeight;
   pauseY2 = pauseY1;
   pauseHeight = appHeight * pauseScaleHeight;
   
-  pausebuttonX = pauseX1 - (pauseWidth*1/4);
+   pausebuttonX = pauseX1 - (pauseWidth*1/4);
   pausewidth2 = pauseHeight;
   /*
    playX1 =  pauseX1;

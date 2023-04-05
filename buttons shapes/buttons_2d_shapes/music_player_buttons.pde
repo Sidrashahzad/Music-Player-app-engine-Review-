@@ -28,10 +28,10 @@ float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
-color skyblue = #B9F4FF;
-color hoverColor, blue2 = #8C9BE8 ;
+color skyblue = #B9F4FF, blue =  #8CAAE8;;
+color playColor = blue ,  stopColor, blue2 = #8C9BE8 ;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
-color resetcolourDaymode = #FFFFFF, blue =  #8CAAE8; // day mode 
+color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
 
  void drawMusicButtons(){
@@ -72,7 +72,7 @@ fill( resetcolourDaymode );
 } // void stop
 //
 void drawPlayButton(){
-  fill(hoverColor);
+  fill(playColor);
  triangle(playX1, playY1, playX2, playY2,playX3, playY3);
  fill( resetcolourDaymode );
 }// end play 
@@ -114,7 +114,7 @@ fill( resetcolourDaymode );
 }// end next 
 //
 void drawStopButton(){//end stopButton
-fill(hoverColor);
+fill(stopColor);
 rect(stopX1, stopY1, stopWidth, stopHeight);
 fill( resetcolourDaymode );
 }

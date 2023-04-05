@@ -11,7 +11,7 @@ void setup() {
    onerectDraw();
   textSetup();
   //population of local variables 
-  textDraw( height, blueink, CENTER, CENTER, titleFont, string, pausebuttonX, pauseY1, pausewidth2, pauseHeight );
+  textDraw( height, blueink, CENTER, CENTER, titleFont, string, pausebuttonX, pauseY1, pausewidth2, pauseHeight);
 }//end setup
 
 void draw() {

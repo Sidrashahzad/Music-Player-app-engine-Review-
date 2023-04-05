@@ -5,16 +5,16 @@ int alignHorizontal, alignVertical;
 String string = " Anything ";
 void textSetup() {
 
-  titleFont = createFont ("CopperplateGothic-Light", 55);// dont press OK
+  titleFont = createFont ("", 55);// dont press OK
 }// end TextSetup
 
 void pretextDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont titleFont ) {
   fill(ink);
   textAlign(alignHorizontal, alignVertical);// left, center, right , top
-  textFont(titleFont, 55);
+  textFont(titleFont, height);
   //(font, height);
 }
-void textDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont titleFont, String string, float rectX, float rectY, float rectwidth, float rectHeight  ) {
+void textDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont titleFont, String string, float rectX, float rectY, float rectWidth, float rectHeight  ) {
   pretextDraw( height, ink, alignHorizontal, alignVertical, titleFont );// passing parameters
   textSize(textCalculator(height, string, rectWidth));
   text(string, rectX, rectY, rectWidth, rectHeight);
@@ -24,15 +24,15 @@ void textReset() {
   fill(whiteInk);
 }// end textreset
 
-float textCalculator(float size, String string, float rectWidth );
+float textCalculator(float size, String string, float rectWidth )
 {
   textSize(size);
-  while (textWidth(string)> rectWidth )
+  while (textWidth(string) > rectWidth )
   {
     size = size * 0.99;// think o fdifferent formula
     textSize(size);
   }
-  return;
+ return size;
 }// floatCalculator
 void textkeyPressed() {
 }// end textkeyPressed
