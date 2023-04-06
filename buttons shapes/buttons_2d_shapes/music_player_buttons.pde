@@ -29,10 +29,14 @@ float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF, blue =  #8CAAE8;;
-color playColor = blue ,  stopColor, blue2 = #8C9BE8 ;
+color stopColor, playColor , blue2 = #8C9BE8;
+color blueplay= #8CAAE8;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
+Boolean triangle = true ;
+Boolean pause1= false;
+Boolean pause2= false;
 
  void drawMusicButtons(){
    drawPauseButton();
@@ -52,11 +56,11 @@ color resetStroke = #000000;
  void drawPauseButton(){
    fill(grey);
   noStroke();
- rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
+rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
  fill(resetcolourDaymode );
  stroke(resetStroke);
- rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
- rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
+if (pause1==true)  rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
+if( pause2==true) rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
 }// end pause 
 //
 void drawBackButton(){
@@ -72,8 +76,8 @@ fill( resetcolourDaymode );
 } // void stop
 //
 void drawPlayButton(){
-  fill(playColor);
- triangle(playX1, playY1, playX2, playY2,playX3, playY3);
+  fill(blue);
+if (triangle==true) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
  fill( resetcolourDaymode );
 }// end play 
 //
