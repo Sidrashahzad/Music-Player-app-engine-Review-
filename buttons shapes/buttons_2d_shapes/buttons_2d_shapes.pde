@@ -277,12 +277,12 @@ void mousePressed(){
    triangle=false;
    if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
    triangle=true;
-    
-   
-  
   }
-  
-  
+  {triangle=true;
+     if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
+ pause1=false;
+  pause2=false;
+}
   
   
 }
