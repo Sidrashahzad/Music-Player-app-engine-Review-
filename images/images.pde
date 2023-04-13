@@ -9,9 +9,11 @@ float imagebackgroundX, imagebackgroundY, imagebackgroundWidth, imagebackgroundH
 PImage pic;
 Boolean nightmode=false ;
 float PicWIDTHadjusted = 0.0, PicHEIGHTAdjusted = 0.0 ;// IF REQUIRES PREVIOUS VALUE
+Boolean imagecenter=true , ImageRightBottom=false;// Vars image justificatin
+float whitespace = 0.0,PicX_Adjusted=0.0 , PicY_Adjusted= 0.0;
 
 //
-size(600, 400);
+size(500, 100);
 appWidth = width;
 appHeight = height ;
 //
@@ -38,16 +40,29 @@ if (picWidth >= picHeight) {
   //TRUE IF LANDSCAPE OR SQUARE
   largerDimension = picWidth;
   smallerDimension = picHeight;
-  ImageHeightRatio =  float (smallerDimension)/ flaot(largerDimension);// ratio <= 1 
-  PicWIDTHadjusted = imagebackgroundWidth;
+  ImageHeightRatio =  float (smallerDimension)/ float(largerDimension);// ratio <= 1
+  PicWIDTHadjusted = imagebackgroundWidth;// compressed
   PicHEIGHTAdjusted = imagebackgroundWidth * ImageHeightRatio;
-} else { // FALSE IF PORTRAIT 
-/*I Finish 
-  largerDimension = picHeight;
-  smallerDimension = picWidth  ;
-  ImageWidthRatio =  largerDimension;
-  PicWIDTHadjusted
-  PicHEIGHTAdjusted = */
+  // if image fits in rect; Center smaller Dimension 
+  whitespace =  imagebackgroundHeight- PicHEIGHTAdjusted;
+  if(imagecenter==true)PicY_Adjusted = imagebackgroundX+ whitespace*1/2;
+  if (ImageRightBottom==true )PicY_Adjusted = imagebackgroundX+whitespace;
+   
+  if (PicHEIGHTAdjusted > imagebackgroundHeight  ) {// ERROR Catch: adjusted Height is > then rect
+  PicHEIGHTAdjusted = imagebackgroundHeight;
+  PicWIDTHadjusted = PicWIDTHadjusted*ImageHeightRatio;// casting like formula like previous formula
+  whitespace= imagebackgroundHeight - PicWIDTHadjusted;
+  // if image left justified then no change to X-var
+    if(imagecenter==true)PicY_Adjusted = imagebackgroundY+whitespace*1/2;
+  if (ImageRightBottom==true )PicY_Adjusted = imagebackgroundY+whitespace;
+}
+} else { // FALSE IF PORTRAIT
+  /*I Finish
+   largerDimension = picHeight;
+   smallerDimension = picWidth  ;
+   ImageWidthRatio =  largerDimension;
+   PicWIDTHadjusted
+   PicHEIGHTAdjusted = */
 }
 // rectangle layout and image drawing to CANVAS
 rect(imagebackgroundX, imagebackgroundY, imagebackgroundWidth, imagebackgroundHeight);
@@ -55,9 +70,9 @@ rect(imagebackgroundX, imagebackgroundY, imagebackgroundWidth, imagebackgroundHe
 if (nightmode==false)tint(255, 100);//gray scale day 1/2 tint for white 128/255=1/2
 if (nightmode==true)tint(64, 64, 40);// rgb night
 //image( pic, imagebackgroundX, imagebackgroundY, imagebackgroundWidth, imagebackgroundHeight);// non Aspect ratio
-// image doesnt print to canvas If 
+// image doesnt print to canvas If
 println(imagebackgroundX, imagebackgroundY, PicWIDTHadjusted, PicHEIGHTAdjusted);
-// aspect Ratio image 
-//image( pic, imagebackgroundX, imagebackgroundY, PicWIDTHadjusted, PicHEIGHTAdjusted);
+// aspect Ratio image
+image( pic, imagebackgroundX, PicY_Adjusted, PicWIDTHadjusted, PicHEIGHTAdjusted);
 
 // end main program

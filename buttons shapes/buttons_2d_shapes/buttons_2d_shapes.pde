@@ -196,9 +196,10 @@ if (mouseX >=  pauseX1 && mouseX<= pauseX1+pausewidth2 && mouseY>= pauseY1 && mo
  }
     
 if (mouseX >= playX1  && mouseX>= playX2 &&  mouseX<= playX3 && mouseY>= playY1  && mouseY>= playY2 && mouseY<= playY3 )  // pause
-{ 
+{ stopColor = blue;
    println("Hovering over play-pause");
  } else { 
+       stopColor = blue2;
    println("") ; 
  }
  
