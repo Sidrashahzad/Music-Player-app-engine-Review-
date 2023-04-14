@@ -187,48 +187,50 @@ muteHeight = pauseHeight;*/
 void draw(){
 drawMusicButtons();
 println(mouseX, mouseY)  ;
-if (mouseX >=  pauseX1 && mouseX<= pauseX1+pausewidth2 && mouseY>= pauseY1 && mouseY<= pauseY1+pauseHeight)  // pause
-{ 
-  println("Hovering over play-pause");
- } else { 
-   println("") ; 
-   
- }
+
     
-if (mouseX >= playX1  && mouseX>= playX2 &&  mouseX<= playX3 && mouseY>= playY1  && mouseY>= playY2 && mouseY<= playY3 )  // pause
-{ stopColor = blue;
+if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)  // pause
+{ playcolor = blue;
    println("Hovering over play-pause");
  } else { 
-       stopColor = blue2;
+   playcolor = blue2;
    println("") ; 
  }
  
   if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)//back
  { 
+   BackColor=blue;
   println("Hovering over Back");
  } else { 
+   BackColor=blue2;
    println("") ; 
  }
  
   
   if (mouseX >=  reverseRectX && mouseX<=  reverseRectX+reverseRectWidth && mouseY>= reverseRectY && mouseY<= reverseRectY+pauseHeight) // revers
  { 
+   reverseColor = blue;
   println("Hovering over rewind");
  } else { 
+   reverseColor= blue2;
    println("") ; 
  }
  
   if (mouseX >=  forwardrectX && mouseX<=  forwardrectX+forwardrectWidth && mouseY>= forwardrectY && mouseY<=  forwardrectY+pauseHeight) 
  { 
+   forwardColor= blue;
   println("Hovering over forward");
  } else { 
+   forwardColor= blue2;
    println("") ; 
  }
  
  if (mouseX >=  nextbuttonrectX && mouseX<=  nextbuttonrectX+nextbuttonrectWidth && mouseY>= nextbuttonrectY && mouseY<=  nextbuttonrectY+pauseHeight)// next
  { 
+   nextColor = blue;
   println("Hovering over next");
  } else { 
+   nextColor= blue2;
    println("") ; 
  }
  
@@ -264,26 +266,13 @@ void keyPressed(){
 }
 
 void mousePressed(){
-  {
-  triangle=true;
-  pause1=false;
-  pause2=false;
- if (mouseX >= playX1  && mouseX>= playX2 &&  mouseX<= playX3 && mouseY>= playY1  && mouseY>= playY2 && mouseY<= playY3 )  // pause
-   triangle=false;
-  pause1=true;
-  pause2=true;
-  } 
+ 
+  
 
-   {
-   triangle=false;
-   if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
-   triangle=true;
-  }
-  {triangle=true;
-     if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
- pause1=false;
-  pause2=false;
-}
+  
+ 
+
+
   
   
 }

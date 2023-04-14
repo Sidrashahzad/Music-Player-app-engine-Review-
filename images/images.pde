@@ -13,7 +13,7 @@ Boolean imagecenter=true , ImageRightBottom=false;// Vars image justificatin
 float whitespace = 0.0,PicX_Adjusted=0.0 , PicY_Adjusted= 0.0;
 
 //
-size(500, 100);
+size(500, 800);
 appWidth = width;
 appHeight = height ;
 //
@@ -46,23 +46,26 @@ if (picWidth >= picHeight) {
   // if image fits in rect; Center smaller Dimension 
   whitespace =  imagebackgroundHeight- PicHEIGHTAdjusted;
   if(imagecenter==true)PicY_Adjusted = imagebackgroundX+ whitespace*1/2;
-  if (ImageRightBottom==true )PicY_Adjusted = imagebackgroundX+whitespace;
+  if (ImageRightBottom==true )PicY_Adjusted = imagebackgroundX + whitespace;
    
   if (PicHEIGHTAdjusted > imagebackgroundHeight  ) {// ERROR Catch: adjusted Height is > then rect
   PicHEIGHTAdjusted = imagebackgroundHeight;
   PicWIDTHadjusted = PicWIDTHadjusted*ImageHeightRatio;// casting like formula like previous formula
-  whitespace= imagebackgroundHeight - PicWIDTHadjusted;
+  whitespace= imagebackgroundWidth - PicWIDTHadjusted;
   // if image left justified then no change to X-var
-    if(imagecenter==true)PicY_Adjusted = imagebackgroundY+whitespace*1/2;
-  if (ImageRightBottom==true )PicY_Adjusted = imagebackgroundY+whitespace;
-}
+  PicX_Adjusted= imagebackgroundX;
+  PicY_Adjusted = imagebackgroundY;
+    if(imagecenter==true)PicX_Adjusted = imagebackgroundY+whitespace*1/2;
+  if (ImageRightBottom==true )PicX_Adjusted = imagebackgroundY+whitespace;
+  } 
 } else { // FALSE IF PORTRAIT
-  /*I Finish
+ 
    largerDimension = picHeight;
    smallerDimension = picWidth  ;
-   ImageWidthRatio =  largerDimension;
-   PicWIDTHadjusted
-   PicHEIGHTAdjusted = */
+   ImageWidthRatio =  float (largerDimension)/ float(smallerDimension);
+   PicWIDTHadjusted = imagebackgroundWidth * ImageWidthRatio;
+   PicHEIGHTAdjusted = imagebackgroundHeight;
+    //whitespace = imagebackgroundWidth - PicWIDTHadjusted;
 }
 // rectangle layout and image drawing to CANVAS
 rect(imagebackgroundX, imagebackgroundY, imagebackgroundWidth, imagebackgroundHeight);
@@ -73,6 +76,6 @@ if (nightmode==true)tint(64, 64, 40);// rgb night
 // image doesnt print to canvas If
 println(imagebackgroundX, imagebackgroundY, PicWIDTHadjusted, PicHEIGHTAdjusted);
 // aspect Ratio image
-image( pic, imagebackgroundX, PicY_Adjusted, PicWIDTHadjusted, PicHEIGHTAdjusted);
+image( pic, PicX_Adjusted , PicY_Adjusted, PicWIDTHadjusted, PicHEIGHTAdjusted);
 
 // end main program

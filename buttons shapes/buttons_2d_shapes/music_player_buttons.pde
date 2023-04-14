@@ -29,19 +29,18 @@ float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF, blue =  #8CAAE8;;
-color stopColor, playColor , blue2 = #8C9BE8;
-color blueplay= #8CAAE8;
+color stopColor, playcolor, BackColor,  reverseColor, forwardColor, nextColor,blue2 = #8C9BE8;
+       
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
 Boolean triangle = true ;
-Boolean pause1= false;
-Boolean pause2= false;
-
+Boolean pause=false;
  void drawMusicButtons(){
+    
    drawPauseButton();
+   drawPlayButton();
     drawBackButton();
-    drawPlayButton();
     drawForwardButton();
     drawReverseButton();
     drawNextButton();
@@ -53,15 +52,23 @@ Boolean pause2= false;
 }
  //
  // end music buttons
+ 
+//
  void drawPauseButton(){
    fill(grey);
   noStroke();
 rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
  fill(resetcolourDaymode );
  stroke(resetStroke);
-if (pause1==true)  rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
-if( pause2==true) rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
+if(pause==true) rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
+if(pause==true) rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
 }// end pause 
+
+void drawPlayButton(){
+  fill(playcolor);
+if (triangle==true) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
+ fill( resetcolourDaymode );
+}// end play 
 //
 void drawBackButton(){
   fill(grey);// ternary operator 
@@ -69,25 +76,20 @@ void drawBackButton(){
 rect( backRectX, backRectY, backButtonWidth, backRectHeight);
  stroke(resetStroke);
 fill( resetcolourDaymode );
-fill(blue);
+fill(BackColor);
 triangle(backX1, backY1, backX2, backY2, backX3, backY3);
 rect( backRectX, backRectY, backRectWidth, backRectHeight);
 fill( resetcolourDaymode );
 } // void stop
 //
-void drawPlayButton(){
-  fill(blue);
-if (triangle==true) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
- fill( resetcolourDaymode );
-}// end play 
-//
+
 void drawForwardButton(){
     fill(grey);// ternary operator 
       noStroke();
   rect(forwardrectX, forwardrectY, forwardrectWidth, pauseHeight);
   stroke(resetStroke);
   fill( resetcolourDaymode );
-  fill(blue);
+  fill(forwardColor);
 triangle(forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
 triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
 fill( resetcolourDaymode );
@@ -99,7 +101,7 @@ void drawReverseButton(){
   rect(reverseRectX, reverseRectY, reverseRectWidth, pauseHeight );
    stroke(resetStroke);
 fill( resetcolourDaymode );
-fill(blue);
+fill(reverseColor);
 triangle(reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3);
 triangle(reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6);
 fill( resetcolourDaymode );
@@ -111,7 +113,7 @@ void drawNextButton(){
   rect(nextbuttonrectX, nextbuttonrectY, nextbuttonrectWidth, pauseHeight);
    stroke(resetStroke);
 fill( resetcolourDaymode );
-  fill(blue);
+  fill(nextColor);
 triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
 rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);
 fill( resetcolourDaymode );
