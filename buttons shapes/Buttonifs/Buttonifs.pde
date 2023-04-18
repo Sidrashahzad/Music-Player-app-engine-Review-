@@ -12,8 +12,7 @@ color blue = #1A5EED;
 color white = #FFFFFF;
 String button1 = "Click me ";
 String button2 = "click me";
-Boolean rect1= false;
-Boolean rect2= false ;
+Boolean rect1= false, rect2= false ;
 void setup() {
   size(800,500);
   println(width,height,displayWidth,displayHeight);
@@ -76,17 +75,16 @@ void draw() {
   
   rect( backX, pauseY1, pausewidth2, pauseHeight );//back
   textDraw1();
- if(rect1==true) rect(rectX,rectY,rectWidth,rectHeight);
+ if(rect1==true &&rect2==false) rect(rectX,rectY,rectWidth,rectHeight);
  rect(pauseX1, pauseY1, pausewidth2 , pauseHeight);// play-pause
  textDraw2();
-if(rect2==true) rect(rectX2,rectY,rectWidth,rectHeight);
+if(rect1==false && rect2==true ) rect(rectX2,rectY,rectWidth,rectHeight);
 }//end draw
 
 void mousePressed() {
- rect1=false;
+{ rect1=false;
   rect2=false;
-  if (mouseX>=backX && mouseX<=backX+pausewidth2 && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight)rect1=true;
-if(mouseX>=pauseX1 && mouseX<=pauseX1+pausewidth2 && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight)rect2=true;
+if (mouseX>=backX && mouseX<=backX+pausewidth2 && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight)rect1=true;}
 
 
 }// end mousePressed

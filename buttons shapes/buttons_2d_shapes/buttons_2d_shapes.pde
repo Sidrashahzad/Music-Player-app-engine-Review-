@@ -167,19 +167,17 @@ loopinfinTriY3 = stopY1 + pauseWidth;
  loopinfinRectY = stopY1;
  loopinfinRectWidth = pauseHeight ;
  loopinfinRectHeight = pauseHeight ;
-/*
-muteX = pauseStartDrawX  + pauseWidth + pauseWidth +(appWidth*8/30);
-muteY = pauseY1;
+
+muteX = forwardX1;
+muteY = stopY1;
 muteWidth = pauseHeight;
-muteHeight = pauseHeight;*/
+muteHeight = pauseHeight;
 
-
-/*
- loopPlaylistX = forwardX1;
- loopPlaylistY = nextY1;
+ loopPlaylistX = nextX1 ;
+ loopPlaylistY = stopY1 ;
  loopPlaylistWidth = pauseHeight;
  loopPlaylistHeight = pauseHeight;
- */
+ 
 //
 
 //
@@ -197,6 +195,13 @@ if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
    println("") ; 
  }
  
+ if (mouseX >= pausebuttonX  && mouseX<=pausebuttonX+pausewidth2  && mouseY>=pauseY1   && mouseY<=pauseY1+pauseHeight )
+ { pausecolor = blue;
+   println("Hovering over play-pause");
+ } else { 
+   pausecolor = blue2;
+   println("") ; 
+ }
   if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)//back
  { 
    BackColor=blue;
@@ -248,17 +253,40 @@ if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
  
 if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight)// // looponce  
  { 
+   loop1color = blue;
   println("Hovering over loop once");
  } else { 
+    loop1color =blue2;
    println("") ; 
  } 
  
  if (mouseX >=  loopinfinRectX && mouseX<=  loopinfinRectX+loopinfinRectWidth && mouseY>= loopinfinRectY && mouseY<=  loopinfinRectY+loopinfinRectHeight)// // loop infinite  
- { 
+ { loopIncolor= blue;
   println("Hovering over loop infinite");
  } else { 
+   loopIncolor= blue2;
    println("") ; 
  } 
+ 
+  if (mouseX >= loopPlaylistX  && mouseX<= loopPlaylistX+loopPlaylistWidth  && mouseY>= loopPlaylistY && mouseY<=  loopPlaylistY+loopPlaylistHeight)
+{
+  playlistcolor= blue;
+  println("Hovering over loop Playlist");
+ } else { 
+   playlistcolor= blue2;
+   println("") ; 
+ }
+ 
+ 
+  if (mouseX >= muteX  && mouseX<= muteX+muteWidth  && mouseY>= muteY && mouseY<=  muteY+muteHeight)
+{  
+  mutecolor= blue;
+  println("Hovering over mute");
+ } else { 
+   mutecolor= blue2;
+   println("") ; 
+ }
+ 
  
 }
 
@@ -266,10 +294,13 @@ void keyPressed(){
 }
 
 void mousePressed(){
- 
-  
+{ triangle=true;
+if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2) pause=true; 
+}  else if  {//Error same button two functions 
+  pause = true ;
+  if (mouseX >= pausebuttonX  && mouseX<=pausebuttonX+pausewidth2  && mouseY>=pauseY1   && mouseY<=pauseY1+pauseHeight )pause = false;
 
-  
+}
  
 
 

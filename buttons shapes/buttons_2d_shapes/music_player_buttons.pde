@@ -28,9 +28,9 @@ float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
 float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
-color skyblue = #B9F4FF, blue =  #8CAAE8;;
-color stopColor, playcolor, BackColor,  reverseColor, forwardColor, nextColor,blue2 = #8C9BE8;
-       
+color skyblue = #B9F4FF, blue =  #8C9BE8;;
+color stopColor, playcolor, BackColor,  reverseColor, forwardColor, nextColor,loop1color,loopIncolor, pausecolor,blue2 = #8CAAE8 ;
+color playlistcolor, mutecolor;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
@@ -57,16 +57,23 @@ Boolean pause=false;
  void drawPauseButton(){
    fill(grey);
   noStroke();
-rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
+  
+if(pause==true ) rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);// button
  fill(resetcolourDaymode );
  stroke(resetStroke);
-if(pause==true) rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
+fill( pausecolor);
+if(pause==true  ) rect(pauseX1, pauseY1,pauseWidth, pauseHeight );
 if(pause==true) rect(pauseX2, pauseY2,pauseWidth, pauseHeight);
 }// end pause 
 
 void drawPlayButton(){
+     fill(grey);
+    noStroke();
+  if (triangle==true && pause==false)rect(pausebuttonX, pauseY1, pausewidth2, pauseHeight);
+   fill(resetcolourDaymode );
+ stroke(resetStroke);
   fill(playcolor);
-if (triangle==true) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
+if (triangle==true && pause==false) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
  fill( resetcolourDaymode );
 }// end play 
 //
@@ -131,10 +138,12 @@ void drawlooponceButton(){
 rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
 stroke(resetStroke);
 fill( resetcolourDaymode );
+fill(loop1color);
 ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
 fill(grey);
 ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
 fill(resetcolourDaymode);
+fill(loop1color);
 triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
 }// end loop once 
 //
@@ -144,18 +153,24 @@ void drawLoopInfinite() {
 rect( loopinfinRectX,loopinfinRectY, loopinfinRectWidth, loopinfinRectHeight);
 stroke(resetStroke);
 fill( resetcolourDaymode );
+fill(loopIncolor);
 ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
 fill(grey);
 ellipse(loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2);
 fill(resetcolourDaymode);
+fill(loopIncolor);
 triangle(loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3);
+fill(resetcolourDaymode);
 }// end loop infinite 
 //
 void drawloopPlaylist(){
+fill(playlistcolor);
 rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
+fill(resetcolourDaymode);
 }// end loop playlist 
 //
 void drawMuteButton(){
+  fill(mutecolor);
 rect(muteX, muteY, muteWidth, muteHeight);
 }// end mute 
 //
