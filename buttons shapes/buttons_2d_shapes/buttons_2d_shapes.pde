@@ -256,21 +256,21 @@ if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mou
    loop1color = blue;
   println("Hovering over loop once");
  } else { 
-    loop1color =blue2;
+    loop1color = blue2;
    println("") ; 
  } 
  
  if (mouseX >=  loopinfinRectX && mouseX<=  loopinfinRectX+loopinfinRectWidth && mouseY>= loopinfinRectY && mouseY<=  loopinfinRectY+loopinfinRectHeight)// // loop infinite  
- { loopIncolor= blue;
+ { loopIncolor = blue;
   println("Hovering over loop infinite");
  } else { 
-   loopIncolor= blue2;
+   loopIncolor = blue2;
    println("") ; 
  } 
  
   if (mouseX >= loopPlaylistX  && mouseX<= loopPlaylistX+loopPlaylistWidth  && mouseY>= loopPlaylistY && mouseY<=  loopPlaylistY+loopPlaylistHeight)
 {
-  playlistcolor= blue;
+  playlistcolor = blue;
   println("Hovering over loop Playlist");
  } else { 
    playlistcolor= blue2;
@@ -294,16 +294,20 @@ void keyPressed(){
 }
 
 void mousePressed(){
-{ triangle=true;
-if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2) pause=true; 
-}  else if  {//Error same button two functions 
-  pause = true ;
-  if (mouseX >= pausebuttonX  && mouseX<=pausebuttonX+pausewidth2  && mouseY>=pauseY1   && mouseY<=pauseY1+pauseHeight )pause = false;
+{ 
+if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
+pause=true; 
+else{
+  if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2) 
+
+pause=false; 
+triangle = true;
+}
+}
+ if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
+pause=false;
+triangle = true;
+
 
 }
- 
-
-
   
-  
-}

@@ -29,26 +29,26 @@ float muteX, muteY, muteWidth, muteHeight;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF, blue =  #8C9BE8;;
-color stopColor, playcolor, BackColor,  reverseColor, forwardColor, nextColor,loop1color,loopIncolor, pausecolor,blue2 = #8CAAE8 ;
+color stopColor, playcolor, BackColor,  reverseColor, forwardColor, nextColor,loop1color,loopIncolor, pausecolor,blue2 = #8CAAE8;
 color playlistcolor, mutecolor;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
 Boolean triangle = true ;
-Boolean pause=false;
+Boolean pause =false;
  void drawMusicButtons(){
     
    drawPauseButton();
    drawPlayButton();
-    drawBackButton();
-    drawForwardButton();
-    drawReverseButton();
-    drawNextButton();
-    drawStopButton();
-    drawlooponceButton();
-    drawLoopInfinite();
-    drawloopPlaylist();
-    drawMuteButton();
+   drawBackButton();
+   drawForwardButton();
+   drawReverseButton();
+   drawNextButton();
+   drawStopButton();
+   drawlooponceButton();
+   drawLoopInfinite();
+   drawloopPlaylist();
+   drawMuteButton();
 }
  //
  // end music buttons

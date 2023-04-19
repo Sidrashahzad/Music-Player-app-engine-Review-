@@ -7,7 +7,6 @@ int currentSong = 0;
 Boolean autoPlayOn = false; 
 //
 void setupMusic(){
-  
 minim = new Minim (this);// load music data directoy, also from project folder
 // set directory or pathway to the music 
 // pathway: data / music or sound effect files
