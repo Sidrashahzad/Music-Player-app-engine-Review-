@@ -25,7 +25,13 @@ float loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight;
 float loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2;
 float loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3;
 float loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight;
+float playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight;
+float playlistRectX2, playlistRectY2;
+float playlistRectX3, playlistRectY3, playlistRectWidth2;
+float playlistTriX, playlistTriY, playlistTriX2, playlistTriY2,playlistTriX3, playlistTriY3;
 float muteX, muteY, muteWidth, muteHeight;
+//PImage pic;
+//float MuteX_Adjusted , MuteY_Adjusted, MuteWIDTHadjusted, MuteHEIGHTAdjusted;
 color grey = #CECECE;
 
 color skyblue = #B9F4FF, blue =  #8C9BE8;;
@@ -34,6 +40,7 @@ color playlistcolor, mutecolor;
 //color reset Nightmodecolour = #FFF94B , black = #000000;// night mode 
 color resetcolourDaymode = #FFFFFF ;// day mode 
 color resetStroke = #000000;
+color black = #000000;
 Boolean triangle = true ;
 Boolean pause =false;
  void drawMusicButtons(){
@@ -167,10 +174,18 @@ void drawloopPlaylist(){
 fill(playlistcolor);
 rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
 fill(resetcolourDaymode);
+fill (black);
+rect( playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight);
+rect( playlistRectX2, playlistRectY2, playlistRectWidth, playlistRectHeight);
+rect( playlistRectX3, playlistRectY3, playlistRectWidth2, playlistRectHeight);
+triangle(playlistTriX, playlistTriY, playlistTriX2, playlistTriY2,playlistTriX3, playlistTriY3);
+fill(resetcolourDaymode);
 }// end loop playlist 
 //
 void drawMuteButton(){
   fill(mutecolor);
 rect(muteX, muteY, muteWidth, muteHeight);
+//image( pic, MuteX_Adjusted , MuteY_Adjusted, MuteWIDTHadjusted, MuteHEIGHTAdjusted);
+
 }// end mute 
 //

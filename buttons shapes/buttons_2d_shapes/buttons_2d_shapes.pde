@@ -178,11 +178,33 @@ muteHeight = pauseHeight;
  loopPlaylistWidth = pauseHeight;
  loopPlaylistHeight = pauseHeight;
  
+ playlistRectX = nextX1 + ( pauseWidth * 1.7/5 );
+ playlistRectY = stopY1+ ( pauseWidth *2.5/4);
+ playlistRectWidth =  pauseHeight - (pauseHeight*1/5);
+ playlistRectHeight = pauseWidth - (pauseWidth*3/6);
+ 
+ playlistRectX2 = playlistRectX;
+ playlistRectY2 = playlistRectY + playlistRectHeight + ( pauseWidth *1/4);
 //
+playlistRectX3 = playlistRectX ; 
+playlistRectY3 = playlistRectY2 + playlistRectHeight  + ( pauseWidth *1/4);
+playlistRectWidth2 =  pauseHeight*1/2;
 
+playlistTriX = playlistRectX3+ playlistRectWidth2 + ( playlistRectHeight*1/2) ;
+playlistTriY = playlistRectY3 ;
+playlistTriX2 =playlistTriX ;
+playlistTriY2 = playlistRectY3+playlistRectHeight + playlistRectHeight ;
+playlistTriX3 = playlistTriX + playlistRectHeight + playlistRectHeight ;
+playlistTriY3 = playlistRectY3 + playlistRectHeight;
+/*
+MuteX_Adjusted = muteX;
+MuteY_Adjusted = muteY;
+MuteWIDTHadjusted = pauseHeight;
+MuteHEIGHTAdjusted = pauseHeight;*/
 //
 }
 void draw(){
+ // pic =loadImage()
 drawMusicButtons();
 println(mouseX, mouseY)  ;
 
@@ -297,17 +319,9 @@ void mousePressed(){
 { 
 if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
 pause=true; 
-else{
-  if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2) 
-
-pause=false; 
-triangle = true;
-}
 }
  if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
 pause=false;
-triangle = true;
-
 
 }
   

@@ -4,6 +4,7 @@
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
 float backX, backY, backWidth, backHeight;
+float playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight;
 float pausewidth2;
 float reverseX3;
 float forwardX1;
@@ -55,6 +56,12 @@ rectHeight = ButtonSide;*/
   //
  looponceY1 = backY + backWidth + pauseWidth + pauseWidth;
 //
+
+ playlistRectX = nextX1 + (1/4* pauseWidth);
+ playlistRectY = looponceY1 + (1/4* pauseWidth);
+ playlistRectWidth = 1/4* pauseWidth;
+ playlistRectHeight = 1/4* pauseWidth;
+
 // 
 }// end setup 
 //
@@ -144,7 +151,9 @@ if (mouseX >=  nextX1 && mouseX<= nextX1+pausewidth2 && mouseY>= looponceY1 && m
  rect( backX, looponceY1, pausewidth2, pauseHeight );// loop once
  rect(reverseX3, looponceY1, pausewidth2, pauseHeight );// loop infinite
  rect(pauseX1, looponceY1, pausewidth2 , pauseHeight);// stop
- rect(forwardX1,looponceY1,pausewidth2, pauseHeight);// autoplay
+rect(forwardX1,looponceY1,pausewidth2, pauseHeight);// autoplay
+ 
+rect( playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight);
  rect(nextX1,looponceY1,pausewidth2, pauseHeight);// mute
 //
 }// end draw
