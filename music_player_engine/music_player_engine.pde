@@ -7,10 +7,12 @@ import ddf.minim.ugens.*;
 
 float MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight;
 
-
+PFont textfont;
+color blue = #1A5EED;
+color white = #FFFFFF;
 int appWidth, appHeight;
 Boolean musicButtons=false;
-
+String Musicbutton = "Click me ";
 // global variables 
 //
 void setup(){
@@ -25,14 +27,31 @@ MusicButtonY = appHeight*7.99/10;
 MusicButtonWidth = appWidth*1/5;
 MusicButtonHeight = appHeight*2/10;
 
+   textfont = createFont("Harrington", 55);
+
 //
 }// end setup 
+
+
+void textDrawPre(){
+  fill(blue);
+  textAlign(CENTER,CENTER);
+  textFont(textfont,20);
+}
+void textDraw1(){
+textDrawPre();
+text(Musicbutton, MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
+textdrawpost();
+}
+//
+void textdrawpost(){
+fill(white);}
+
 void draw(){
 drawMusic();
 rect(MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
 }
 //end draw
-//
 void keyPressed(){
 keyPressedMusic();
 
