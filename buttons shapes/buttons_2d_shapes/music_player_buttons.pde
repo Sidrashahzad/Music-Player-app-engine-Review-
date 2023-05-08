@@ -56,6 +56,7 @@ Boolean pause =false;
    drawLoopInfinite();
    drawloopPlaylist();
    drawMuteButton();
+   
 }
  //
  // end music buttons

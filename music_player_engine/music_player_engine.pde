@@ -5,6 +5,8 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
+
+
 float MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight;
 
 PFont textfont;
@@ -28,16 +30,17 @@ MusicButtonWidth = appWidth*1/5;
 MusicButtonHeight = appHeight*2/10;
 
    textfont = createFont("Harrington", 55);
-population();
+  population();
 //
 }// end setup 
 
 void draw(){
-  
-drawMusic();
-drawMusicButtons();
+  drawMusicButtons();
+fill(white);
 rect(MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
 textDraw1();
+
+drawMusic();
 
 println(mouseX, mouseY)  ;
 
@@ -167,8 +170,16 @@ keyPressedMusic();
 }// end keypressed
 
 void mousePressed(){
-if ( mouseX >= MusicButtonX && mouseX<=MusicButtonX+MusicButtonWidth && mouseY>= MusicButtonY && mouseY<= MusicButtonY+MusicButtonHeight);
-musicButtons=true;
+{ 
+if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
+pause=true; 
+}
+click(1)
+ if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
+pause=false;
+
+
+  
 }// end mousepressed
 //
 //End main Program

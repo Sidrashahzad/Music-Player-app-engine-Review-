@@ -201,6 +201,8 @@ MuteX_Adjusted = muteX;
 MuteY_Adjusted = muteY;
 MuteWIDTHadjusted = pauseHeight;
 MuteHEIGHTAdjusted = pauseHeight;*/
+ 
+ pic = loadImage(
 //
 }
 void draw(){

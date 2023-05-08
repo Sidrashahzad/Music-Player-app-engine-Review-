@@ -82,12 +82,12 @@ if (triangle==true && pause==false) triangle(playX1, playY1, playX2, playY2,play
 void drawBackButton(){
   fill(grey);// ternary operator 
  noStroke();
-rect( backRectX, backRectY, backButtonWidth, backRectHeight);
+if (musicButtons==false)rect( backRectX, backRectY, backButtonWidth, backRectHeight);
  stroke(resetStroke);
 fill( resetcolourDaymode );
 fill(BackColor);
-triangle(backX1, backY1, backX2, backY2, backX3, backY3);
-rect( backRectX, backRectY, backRectWidth, backRectHeight);
+if (musicButtons==false)triangle(backX1, backY1, backX2, backY2, backX3, backY3);
+if (musicButtons==false)rect( backRectX, backRectY, backRectWidth, backRectHeight);
 fill( resetcolourDaymode );
 } // void stop
 //
@@ -95,12 +95,12 @@ fill( resetcolourDaymode );
 void drawForwardButton(){
     fill(grey);// ternary operator 
       noStroke();
-  rect(forwardrectX, forwardrectY, forwardrectWidth, pauseHeight);
+ if (musicButtons==false) rect(forwardrectX, forwardrectY, forwardrectWidth, pauseHeight);
   stroke(resetStroke);
   fill( resetcolourDaymode );
   fill(forwardColor);
-triangle(forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
-triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
+if (musicButtons==false)triangle(forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
+if (musicButtons==false)triangle(forwardX4, forwardY4, forwardX5, forwardY5, forwardX6, forwardY6);
 fill( resetcolourDaymode );
 }// end forward 
 //
