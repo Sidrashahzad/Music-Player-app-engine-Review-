@@ -172,14 +172,93 @@ keyPressedMusic();
 void mousePressed(){
 { 
 if (mouseX >= playX1  && mouseX<=playX3  && mouseY>= playY1  && mouseY<= playY2)
-pause=true; 
-}
-click(1)
+ // play-pause
+       if( songs[currentSong].isPlaying() ) {
+       songs[currentSong].pause();
+       pause=false;
+     } else {
+      songs[currentSong].play();
+      pause=true;
+       } 
+  /*   else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10);
+      { 
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+    } else {
+       currentSong ++ ;
+  } */
+     
+      // playPause();
+    }//end play-pause Button
+
+
  if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop  
-pause=false;
+
+ if ( songs[currentSong].isPlaying() ) {
+ songs[currentSong].pause();
+ songs[currentSong].rewind();
+ pause=false;}
+  /* Possible for smarter STOP button
+   include "soft pause" for first 15 sec of stop 
+  include auto previous & next track if stop at the begining or end of file*/
+  /*
+   else if( songs[currentSong].position() <= songs[currentSong]. length()*1/10)
+{
+  songs[currentSong].isPlaying();
+  songs[currentSong].rewind();
+} 
+  }// end void stop */
+
+ 
+ {
+  if ( mouseX >=  forwardrectX && mouseX<=  forwardrectX+forwardrectWidth && mouseY>= forwardrectY && mouseY<=  forwardrectY+pauseHeight)
+{
+  songs[currentSong].skip(5000);// 1000 = 1sec
+} else if(songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) { 
+   songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    currentSong ++;
+  // i finish 
+} 
+ }
+ 
+ 
+ 
+ {
+  if(mouseX >=  reverseRectX && mouseX<=  reverseRectX+reverseRectWidth && mouseY>= reverseRectY && mouseY<= reverseRectY+pauseHeight) {
+    songs[currentSong].skip(-5000);
+  }else if (songs[currentSong].position() <= songs[currentSong]. length()*2/10){
+  songs[currentSong].pause();
+    songs[currentSong].rewind(); 
+    //currentSong--;// Error come back and fix 
+}
+ }//END REVERSE
+ 
+ /*{
+ if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight ){
+    singleloop();
+  }//end single loop 
+ }
+{  //loop infinite
+   if ( mouseX >=  loopinfinRectX && mouseX<=  loopinfinRectX+loopinfinRectWidth && mouseY>= loopinfinRectY && mouseY<=  loopinfinRectY+loopinfinRectHeight ){
+   infiniteloop();
+   }// end loop infinite 
+ }*/
+ 
+ //autoplay 
+ {
+  if(mouseX >= loopPlaylistX  && mouseX<= loopPlaylistX +loopPlaylistWidth && mouseY>= loopPlaylistY && mouseY<= loopPlaylistY+loopPlaylistHeight) 
+{
+ if (autoPlayOn=false )
+{
+  autoPlayOn=true;
+} 
+else {autoPlayOn=false;
+  }
+}
+ }// end void autoplay 
 
 
-  
 }// end mousepressed
 //
 //End main Program

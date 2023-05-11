@@ -40,36 +40,35 @@ void keyPressedMusic(){ //<>//
      } else {
       songs[currentSong].play();
        } 
-/*      else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10)
+    /* else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10)
       { 
     songs[currentSong].pause();
     songs[currentSong].rewind();
     } else {
        currentSong ++ ;
-  } */
-     
+  } 
+     */
       // playPause();
     }//end play-pause Button
-
+/*
 if ( key == 'm' || key == 'M'){
  if (songs[currentSong ].isMuted ()) {
 songs[currentSong ].unmute();
  } else if ( songs[currentSong ].position() >= songs[currentSong ].length()*4/5 ) {
  // I finish smart muteButton 
- /* ERROR music player breaks if song finishes if rewind */
+ // ERROR music player breaks if song finishes if rewind 
 
  songs[currentSong].rewind();
  } else {
 songs[currentSong].mute(); 
-} /* else if { currentSong ++;
+}  else if { currentSong ++;
   
 song [currentSong].unmute(); 
-  } */
- }// end void mute
+  } 
+ }// end void mute*/
   // mute();
-
 // forward / reverse buttons
-
+/*
 if ( key == 'f' || key == 'F')
 {
   songs[currentSong].skip(5000);// 1000 = 1sec
@@ -78,21 +77,21 @@ if ( key == 'f' || key == 'F')
     songs[currentSong].rewind(); 
     currentSong ++;
   // i finish 
-} 
+} */
  // forward();
 // end forward 
-/*
-  if(key == 'r' || key == 'R') {
+
+/*  if(key == 'r' || key == 'R') {
     songs[currentSong].skip(-5000);
   }else if (songs[currentSong].position() <= songs[currentSong]. length()*2/10){
   songs[currentSong].pause();
     songs[currentSong].rewind(); 
     //currentSong--;// Error come back and fix 
-} 
+} */
    // Reverse();
   // end reverse 
   // single loop
-  p
+  /*
   if ( key == '1' ){
     singleloop();
   }//end single loop 
@@ -106,16 +105,26 @@ Stop();
   }*/
   //end stop 
 
-/*
+
 // Autoplay button 
-if (key == 'o'|| key == 'O'){
- Autoplay();
+//if (key == 'o'|| key == 'O'){
+ //Autoplay();
 } // end Autoplay 
 
-
+/*
  //next            
   if (key == 'n' || key == 'N'){
- next();
+    { 
+    if (songs[currentSong].isPlaying()) {
+   songs[currentSong].pause();
+   songs[currentSong].rewind();
+     arrayFix();
+  } else {
+      currentSong.rewind();
+      arrayFix();
+     //Throws ArrayoutofBounds 
+   }
+  }// end void next 
   }//end next button
   
   
@@ -123,8 +132,8 @@ if (key == 'o'|| key == 'O'){
    if ( key == 'b' || key == 'B'){
    previous();
    }// end previous button 
-   */
-}// end keyPressedMusic
+  */
+//}// end keyPressedMusic
 
 void concatenationofMusicFiles(){
 pathway = "Music/"; 
@@ -234,13 +243,10 @@ else {autoPlayOn=false;
     if (songs[currentSong].isPlaying()) {
    songs[currentSong].pause();
    songs[currentSong].rewind();
-    songs[currentSong].play()
-  } else if ( currentSong == songs.length - 1){ // Error catch ArrayOutofBounds 
-  currentSong = songs.length - songs.length;// Intention = 0
- currentSong.rewind();
- } else { 
-     currentSong ++ ;
+     arrayFix()
+  } else {
       currentSong.rewind();
+      arrayFix()
      //Throws ArrayoutofBounds 
    }
   }// end void next 
