@@ -75,7 +75,7 @@ void drawPlayButton(){
    fill(resetcolourDaymode );
  stroke(resetStroke);
   fill(playcolor);
-if (triangle==true && pause==false) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
+if (musicButtons==false)if (triangle==true && pause==false) triangle(playX1, playY1, playX2, playY2,playX3, playY3);
  fill( resetcolourDaymode );
 }// end play 
 //
@@ -111,8 +111,8 @@ void drawReverseButton(){
    stroke(resetStroke);
 fill( resetcolourDaymode );
 fill(reverseColor);
-triangle(reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3);
-triangle(reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6);
+if (musicButtons==false)triangle(reverseX1, reverseY1, reverseX2, reverseY2,reverseX3, reverseY3);
+if (musicButtons==false)triangle(reverseX4, reverseY4, reverseX5, reverseY5,reverseX6, reverseY6);
 fill( resetcolourDaymode );
 }// end reverse 
 //
@@ -123,14 +123,14 @@ void drawNextButton(){
    stroke(resetStroke);
 fill( resetcolourDaymode );
   fill(nextColor);
-triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
-rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);
+if (musicButtons==false)triangle(nextX1, nextY1, nextX2, nextY2, nextX3, nextY3);
+if (musicButtons==false)rect(nextrectX, nextrectY, nextrectWidth, nextrectheight);
 fill( resetcolourDaymode );
 }// end next 
 //
 void drawStopButton(){//end stopButton
 fill(stopColor);
-rect(stopX1, stopY1, stopWidth, stopHeight);
+if (musicButtons==false)rect(stopX1, stopY1, stopWidth, stopHeight);
 fill( resetcolourDaymode );
 }
 //
@@ -141,12 +141,12 @@ rect(looponceRectX, looponceRectY, looponceRectwidth, looponceRectheight);
 stroke(resetStroke);
 fill( resetcolourDaymode );
 fill(loop1color);
-ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+if (musicButtons==false)ellipse(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
 fill(grey);
-ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
+if (musicButtons==false)ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
 fill(resetcolourDaymode);
 fill(loop1color);
-triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
+if (musicButtons==false)triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
 }// end loop once 
 //
 void drawLoopInfinite() {
@@ -156,24 +156,24 @@ rect( loopinfinRectX,loopinfinRectY, loopinfinRectWidth, loopinfinRectHeight);
 stroke(resetStroke);
 fill( resetcolourDaymode );
 fill(loopIncolor);
-ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
+if (musicButtons==false)ellipse(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
 fill(grey);
-ellipse(loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2);
+if (musicButtons==false)ellipse(loopInfiniteX2,loopInfiniteY2, loopInfinitewidth2, loopInfiniteheight2);
 fill(resetcolourDaymode);
 fill(loopIncolor);
-triangle(loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3);
+if (musicButtons==false)triangle(loopinfinTriX1, loopinfinTriY1, loopinfinTriX2, loopinfinTriY2, loopinfinTriX3, loopinfinTriY3);
 fill(resetcolourDaymode);
 }// end loop infinite 
 //
 void drawloopPlaylist(){
 fill(playlistcolor);
-rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
+if (musicButtons==false)rect(loopPlaylistX, loopPlaylistY, loopPlaylistWidth, loopPlaylistHeight);
 fill(resetcolourDaymode);
 fill (black);
-rect( playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight);
-rect( playlistRectX2, playlistRectY2, playlistRectWidth, playlistRectHeight);
-rect( playlistRectX3, playlistRectY3, playlistRectWidth2, playlistRectHeight);
-triangle(playlistTriX, playlistTriY, playlistTriX2, playlistTriY2,playlistTriX3, playlistTriY3);
+if (musicButtons==false)rect( playlistRectX, playlistRectY, playlistRectWidth, playlistRectHeight);
+if (musicButtons==false)rect( playlistRectX2, playlistRectY2, playlistRectWidth, playlistRectHeight);
+if (musicButtons==false)rect( playlistRectX3, playlistRectY3, playlistRectWidth2, playlistRectHeight);
+if (musicButtons==false)triangle(playlistTriX, playlistTriY, playlistTriX2, playlistTriY2,playlistTriX3, playlistTriY3);
 fill(resetcolourDaymode);
 }// end loop playlist 
 //
