@@ -9,12 +9,14 @@ import ddf.minim.ugens.*;
 
 
 float MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight;
+float QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight;
 
 PFont textfont;
 color blue =  #8C9BE8;
 color white = #FFFFFF;
 int appWidth, appHeight;
 Boolean musicButtons= true;
+Boolean musicFalse = false;
 String Musicbutton = "Music";
 // global variables
 //
@@ -30,6 +32,11 @@ void setup() {
   MusicButtonWidth = appWidth*1/5;
   MusicButtonHeight = appHeight*2/10;
 
+  QuitButtonX = appWidth*9/10;
+  QuitButtonY = appHeight*0;
+  QuitButtonWidth  = appWidth*1/10;
+  QuitButtonHeight = appHeight*1/10;
+
   textfont = createFont("Harrington", 55);
   population();
   //
@@ -38,8 +45,9 @@ void setup() {
 void draw() {
   drawMusicButtons();
   fill(white);
-  if (musicButtons==true) rect(MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
-  if (musicButtons==true) textDraw1();
+  rect(MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
+  textDraw1();
+  rect(QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight);
 
   drawMusic();
 
@@ -170,15 +178,17 @@ void keyPressed() {
 }// end keypressed
 
 void mousePressed() {
+  MusicButtonPressed();
   PlaymousePressed();
   StopmousePressed();
-  MusicButtonPressed();
+  forwardmousePressed();
+  // reversemousePressed();
+  AutoplaymousePressed();
+  QuitButtonPressed();
 }// end mousepressed
 void MusicButtonPressed() {
   if (mouseX >= MusicButtonX  && mouseX<=MusicButtonX+MusicButtonWidth && mouseY>= MusicButtonY && mouseY<= MusicButtonY+MusicButtonHeight)
-  musicButtons= false;
-  
-
+    musicButtons= false;
 }
 
 
@@ -191,12 +201,11 @@ void PlaymousePressed() {
     } else {
       songs[currentSong].play();
       pause=true;
-    }
-  //  else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10);
-  // {
+    }//else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10);
+  //  {
   //  songs[currentSong].pause();
-  songs[currentSong].rewind();
-  //  } //else {
+  //  songs[currentSong].rewind();
+  // } //else {
   //  //   currentSong ++ ;
   // }
   //
@@ -207,8 +216,8 @@ void StopmousePressed() {
   if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop
 
     if ( songs[currentSong].isPlaying() ) {
-      songs[currentSong].pause();
       songs[currentSong].rewind();
+      songs[currentSong].pause();
       pause=false;
     }
   /* Possible for smarter STOP button
@@ -272,7 +281,9 @@ void  AutoplaymousePressed() {
   }
 }// end void autoplay
 
+void  QuitButtonPressed() {
+  //if (mouseX >= loopPlaylistX  && mouseX<= loopPlaylistX +loopPlaylistWidth && mouseY>= loopPlaylistY && mouseY<= loopPlaylistY+loopPlaylistHeight)
 
-
+}//end  QuitButtonPressed
 //
 //End main Program
