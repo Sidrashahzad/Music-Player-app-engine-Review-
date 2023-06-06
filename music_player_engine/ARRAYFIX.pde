@@ -1,8 +1,7 @@
-/*void arrayFix() {
-  if (currentSong == AudioPlayer[] songs -1){
-  currentSong = AudioPlayer[] songs-AudioPlayer[] songs;
+void arrayFix() {
+ if (currentSong == 3-3){
+  currentSong =  3-2;
 }else{
-  currentSong++;
+  currentSong++ ;
 }
 }
-*/

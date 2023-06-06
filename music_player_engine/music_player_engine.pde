@@ -14,10 +14,14 @@ float QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight;
 PFont textfont;
 color blue =  #8C9BE8;
 color white = #FFFFFF;
+color red = #E32929;
+color QuitButtoncolor;
+
 int appWidth, appHeight;
 Boolean musicButtons= true;
 Boolean musicFalse = false;
 String Musicbutton = "Music";
+String Quitbutton = " X ";
 // global variables
 //
 void setup() {
@@ -27,8 +31,8 @@ void setup() {
   songs[currentSong].loop(0);// channge index manually
   appWidth = width ;
   appHeight = height;
-  MusicButtonX = appWidth*3.99/5;
-  MusicButtonY = appHeight*7.99/10;
+  MusicButtonX = appWidth*2.99/5;
+  MusicButtonY = appHeight*0;
   MusicButtonWidth = appWidth*1/5;
   MusicButtonHeight = appHeight*2/10;
 
@@ -47,7 +51,9 @@ void draw() {
   fill(white);
   rect(MusicButtonX, MusicButtonY, MusicButtonWidth, MusicButtonHeight);
   textDraw1();
+  fill(QuitButtoncolor);
   rect(QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight);
+  textDraw2();
 
   drawMusic();
 
@@ -154,6 +160,16 @@ void draw() {
     mutecolor= blue2;
     println("") ;
   }
+
+
+  if (mouseX >= QuitButtonX  && mouseX<= QuitButtonX+QuitButtonWidth  && mouseY>= QuitButtonY && mouseY<=  QuitButtonY+QuitButtonHeight)
+  {
+    QuitButtoncolor= red;
+    println("Hovering over Quit");
+  } else {
+    QuitButtoncolor= grey;
+    println("") ;
+  }
 }
 
 void textDrawPre() {
@@ -167,6 +183,12 @@ void textDraw1() {
   textdrawpost();
 }
 //
+void textDraw2() {
+  textDrawPre();
+  text(Quitbutton, QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight);
+  textdrawpost();
+}
+
 void textdrawpost() {
   fill(white);
 }
@@ -182,7 +204,7 @@ void mousePressed() {
   PlaymousePressed();
   StopmousePressed();
   forwardmousePressed();
-  // reversemousePressed();
+  reversemousePressed();
   AutoplaymousePressed();
   QuitButtonPressed();
 }// end mousepressed
@@ -240,19 +262,34 @@ void forwardmousePressed() {
   } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
-    currentSong ++;
+    //currentSong ++;
     // i finish
   }
 }
+void nextmousePressed() {
+  if (mouseX >=  nextbuttonrectX && mouseX<=  nextbuttonrectX+nextbuttonrectWidth && mouseY>= nextbuttonrectY && mouseY<=  nextbuttonrectY+pauseHeight)// next
+{   
+    if (songs[currentSong].isPlaying() ) {
+   songs[currentSong].pause();
+   songs[currentSong].rewind();
+   
+     arrayFix();
+   songs[currentSong].play();  
+  } else {
+ songs[currentSong].rewind();
+  arrayFix();
+}
 
+}
+}
 
 
 void reversemousePressed() {
   if (mouseX >=  reverseRectX && mouseX<=  reverseRectX+reverseRectWidth && mouseY>= reverseRectY && mouseY<= reverseRectY+pauseHeight) {
     songs[currentSong].skip(-5000);
-  } else if (songs[currentSong].position() <= songs[currentSong]. length()*2/10) {
-    songs[currentSong].pause();
-    songs[currentSong].rewind();
+  } else if (songs[currentSong].position() <= songs[currentSong]. length()*1/10) {
+    //songs[currentSong].pause();
+    //songs[currentSong].rewind();
     //currentSong--;// Error come back and fix
   }
 }//END REVERSE
@@ -282,8 +319,7 @@ void  AutoplaymousePressed() {
 }// end void autoplay
 
 void  QuitButtonPressed() {
-  //if (mouseX >= loopPlaylistX  && mouseX<= loopPlaylistX +loopPlaylistWidth && mouseY>= loopPlaylistY && mouseY<= loopPlaylistY+loopPlaylistHeight)
-
+  if (mouseX >= QuitButtonX  && mouseX<= QuitButtonX+QuitButtonWidth  && mouseY>= QuitButtonY && mouseY<=  QuitButtonY+QuitButtonHeight) exit();
 }//end  QuitButtonPressed
 //
 //End main Program

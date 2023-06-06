@@ -1,8 +1,8 @@
 //global variables
 Minim minim; //creates object to access all functions
-AudioPlayer[] songs = new AudioPlayer[2]; //creates playlist 
+AudioPlayer[] songs = new AudioPlayer[3]; //creates playlist 
 //AudioPlayer[] soundeffects = new AudioPlayer[2]; 
-String pathway, Bonfire, Caramalized;
+String pathway, Bonfire, Caramalized, HeatWave;
 int currentSong = 0;
 Boolean autoPlayOn = false; 
 //
@@ -15,7 +15,8 @@ minim = new Minim (this);// load music data directoy, also from project folder
 //
 concatenationofMusicFiles(); 
 songs[0] = minim.loadFile( pathway + Bonfire) ;
-songs[1] = minim.loadFile( pathway + Caramalized) ;
+songs[1] = minim.loadFile( pathway + Caramalized);
+songs[2] = minim.loadFile( pathway + HeatWave) ;
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
 //soundEffects[0] = minim.LoadFile( path + soundEffectFile)
 }// end setupMusic
@@ -139,7 +140,7 @@ void concatenationofMusicFiles(){
 pathway = "Music/"; 
 Bonfire = "Bonfire - An Jone.mp3";
 Caramalized = "Carmelized - Craig MacArthur.mp3" ;
-//Heat Wave =  "Heat Wave - John Deley and the 41 Players.mp3";
+HeatWave =  "Heat Wave - John Deley and the 41 Players.mp3";
 
 } // end  concatenation
 
