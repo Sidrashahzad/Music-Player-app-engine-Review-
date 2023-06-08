@@ -28,7 +28,7 @@ void setup() {
   size(800, 500);
   setupMusic();
   //
-//  songs[currentSong].loop(0);// channge index manually
+  //  songs[currentSong].loop(0);// channge index manually
   appWidth = width ;
   appHeight = height;
   MusicButtonX = appWidth*2.99/5;
@@ -204,7 +204,10 @@ void mousePressed() {
   PlaymousePressed();
   StopmousePressed();
   forwardmousePressed();
+  nextmousePressed();
   reversemousePressed();
+  MutemousePressed();
+  loopmousePressed();
   AutoplaymousePressed();
   QuitButtonPressed();
 }// end mousepressed
@@ -238,21 +241,25 @@ void StopmousePressed() {
   if (mouseX >=  stopX1 && mouseX<=  stopX1+stopWidth && mouseY>= stopY1 && mouseY<=  stopY1+stopHeight)// // stop
 
     if ( songs[currentSong].isPlaying() ) {
-      songs[currentSong].rewind();
       songs[currentSong].pause();
+      songs[currentSong].skip(-3000);
       pause=false;
     }
   /* Possible for smarter STOP button
    include "soft pause" for first 15 sec of stop
    include auto previous & next track if stop at the begining or end of file*/
-  /*
-   else if( songs[currentSong].position() <= songs[currentSong]. length()*1/10)
-   {
-   songs[currentSong].isPlaying();
-   songs[currentSong].rewind();
-   }
-   
-   // end void stop */
+    else if ( songs[currentSong].position() <= songs[currentSong]. length()*1/10)
+    {
+      songs[currentSong].isPlaying();
+      songs[currentSong].rewind();
+    } else if ( songs[currentSong].position() >= songs[currentSong]. length()*9/10)
+    {
+      songs[currentSong].isPlaying();
+      //songs[currentSong].pause();
+      ///   arrayFix();
+    }
+
+  // end void stop */
 }
 
 void forwardmousePressed() {
@@ -268,19 +275,16 @@ void forwardmousePressed() {
 }
 void nextmousePressed() {
   if (mouseX >=  nextbuttonrectX && mouseX<=  nextbuttonrectX+nextbuttonrectWidth && mouseY>= nextbuttonrectY && mouseY<=  nextbuttonrectY+pauseHeight)// next
-{   
+  {
     if (songs[currentSong].isPlaying() ) {
-   songs[currentSong].pause();
-   songs[currentSong].rewind();
-   
-     arrayFix();
-   songs[currentSong].play();  
-  } else {
- songs[currentSong].rewind();
-  arrayFix();
-}
-
-}
+      songs[currentSong].pause();
+      arrayFix();
+      songs[currentSong].play();
+    } else {
+      songs[currentSong].rewind();
+      arrayFix();
+    }
+  }
 }
 
 
@@ -294,11 +298,47 @@ void reversemousePressed() {
   }
 }//END REVERSE
 
-/*{
- if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight ){
- singleloop();
- }//end single loop
+void Previousmousepressed() {
+  if (mouseX >=  backRectX && mouseX<=  backRectX+backButtonWidth && mouseY>= backRectY && mouseY<= backRectY+backRectHeight)//back
+
+  {
+    if (songs[currentSong].isPlaying() ) {
+      songs[currentSong].pause();
+      arrayFix();
+      songs[currentSong].play();
+    } else {
+      songs[currentSong].rewind();
+      arrayFix();
+    }
+  }
+}
+
+void MutemousePressed() {
+  if(mouseX >= muteX  && mouseX<= muteX+muteWidth  && mouseY>= muteY && mouseY<=  muteY+muteHeight)
+   if (songs[currentSong ].isMuted ()) {
+songs[currentSong ].unmute();
+ } //else if ( songs[currentSong ].position() >= songs[currentSong ].length()*9/10) {
+ //  songs[currentSong].pause();
+ // arrayFix();
+//songs[currentSong].unmute(); 
+  } 
+// end void mute
+//check at home 
+
+
+
+
+void loopmousePressed(){
+if (mouseX >=  looponceRectX && mouseX<=  looponceRectX+looponceRectwidth && mouseY>= looponceRectY && mouseY<=  looponceRectY+looponceRectheight ){
+ delay( songs[currentSong].length() - songs[currentSong].position() );// Error: delay stops all player functions computer doesnt recognize if song is playing
+ songs[currentSong].isPlaying();
+  songs[currentSong].rewind();
+  songs[currentSong].loop(1);
+   
+}// end void Single loop 
  }
+
+/*
  {  //loop infinite
  if ( mouseX >=  loopinfinRectX && mouseX<=  loopinfinRectX+loopinfinRectWidth && mouseY>= loopinfinRectY && mouseY<=  loopinfinRectY+loopinfinRectHeight ){
  infiniteloop();
