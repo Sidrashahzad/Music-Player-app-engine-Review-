@@ -28,7 +28,7 @@ void setup() {
   size(800, 500);
   setupMusic();
   //
-  songs[currentSong].loop(0);// channge index manually
+//  songs[currentSong].loop(0);// channge index manually
   appWidth = width ;
   appHeight = height;
   MusicButtonX = appWidth*2.99/5;

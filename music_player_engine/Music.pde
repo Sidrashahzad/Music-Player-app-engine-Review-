@@ -4,7 +4,7 @@ AudioPlayer[] songs = new AudioPlayer[3]; //creates playlist
 //AudioPlayer[] soundeffects = new AudioPlayer[2]; 
 String pathway, Bonfire, Caramalized, HeatWave;
 int currentSong = 0;
-Boolean autoPlayOn = false; 
+Boolean autoPlayOn = true; 
 //
 void setupMusic(){
 minim = new Minim (this);// load music data directoy, also from project folder
