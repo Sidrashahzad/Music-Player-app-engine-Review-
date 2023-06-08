@@ -16,7 +16,7 @@ color blue =  #8C9BE8;
 color white = #FFFFFF;
 color red = #E32929;
 color QuitButtoncolor;
-
+PImage MuteImage ;
 int appWidth, appHeight;
 Boolean musicButtons= true;
 Boolean musicFalse = false;
@@ -43,6 +43,8 @@ void setup() {
 
   textfont = createFont("Harrington", 55);
   population();
+  
+  MuteImage = loadImage("../music_player_engine/pngtree-speaker-vector-icon-white-transparent-background-png-image_5249050.jpg");
   //
 }// end setup
 
@@ -223,6 +225,7 @@ void PlaymousePressed() {
     if ( songs[currentSong].isPlaying() ) {
       songs[currentSong].pause();
       pause=false;
+        println("pause pressed") ;
     } else {
       songs[currentSong].play();
       pause=true;
@@ -269,8 +272,7 @@ void forwardmousePressed() {
   } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10 ) {
     songs[currentSong].pause();
     songs[currentSong].rewind();
-    //currentSong ++;
-    // i finish
+  arrayFix();
   }
 }
 void nextmousePressed() {

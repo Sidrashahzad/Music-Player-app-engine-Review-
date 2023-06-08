@@ -1,6 +1,6 @@
 void arrayFix() {
- if (currentSong == 3-1){
-  currentSong =  3-3;
+ if (currentSong == 6-1){
+  currentSong =  6-6;
 }else{
   currentSong++ ;
 }

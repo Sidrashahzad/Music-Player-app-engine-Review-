@@ -180,6 +180,7 @@ void drawloopPlaylist() {
 void drawMuteButton() {
   fill(mutecolor);
   rect(muteX, muteY, muteWidth, muteHeight);
+ // image(MuteImage,muteX, muteY, muteWidth, muteHeight);
   //image( pic, MuteX_Adjusted , MuteY_Adjusted, MuteWIDTHadjusted, MuteHEIGHTAdjusted);
 }// end mute
 

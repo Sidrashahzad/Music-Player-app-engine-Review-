@@ -156,7 +156,7 @@ loopinfinTriX1 =  loopInfiniteX  + pauseWidth ;
 loopinfinTriY1 = loopInfiniteY;
 loopinfinTriX2 =  loopInfiniteX + pauseWidth + pauseWidth;
 loopinfinTriY2 = loopInfiniteY;
-loopinfinTriX3 = loopInfiniteX + pauseWidth;
+loopinfinTriX3 = loopInfiniteX + pauseWidth+(pauseWidth*1/2);
 loopinfinTriY3 = stopY1 + pauseWidth; 
 
  
