@@ -217,8 +217,8 @@ void mousePressed() {
   forwardmousePressed();
   nextmousePressed();
   reversemousePressed();
-  MutemousePressed();
-  loopmousePressed();
+ MutemousePressed();
+ loopmousePressed();
   AutoplaymousePressed();
   QuitButtonPressed();
 }// end mousepressed
@@ -238,13 +238,12 @@ void PlaymousePressed() {
     } else {
       songs[currentSong].play();
       pause=true;
-    }//else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10);
-  //  {
-  //  songs[currentSong].pause();
-  //  songs[currentSong].rewind();
-  // } //else {
-  //  //   currentSong ++ ;
-  // }
+    }else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10)
+  {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+         arrayFix();
+   }
   //
   // playPause();
 }//end play-pause Button
@@ -264,11 +263,12 @@ void StopmousePressed() {
     {
       songs[currentSong].isPlaying();
       songs[currentSong].rewind();
-    } else if ( songs[currentSong].position() >= songs[currentSong]. length()*9/10)
+    } 
+    else if ( songs[currentSong].position() >= songs[currentSong]. length()*9/10)
     {
       songs[currentSong].isPlaying();
-      //songs[currentSong].pause();
-      ///   arrayFix();
+      songs[currentSong].pause();
+         arrayFix();
     }
 
   // end void stop */
@@ -327,8 +327,12 @@ void Previousmousepressed() {
 void MutemousePressed() {
   if(mouseX >= muteX  && mouseX<= muteX+muteWidth  && mouseY>= muteY && mouseY<=  muteY+muteHeight)
    if (songs[currentSong ].isMuted ()) {
-songs[currentSong ].unmute();
- } //else if ( songs[currentSong ].position() >= songs[currentSong ].length()*9/10) {
+  songs[currentSong ].unmute();
+ }else {
+   songs[currentSong ].unmute();
+ }
+ 
+ //else if ( songs[currentSong ].position() >= songs[currentSong ].length()*9/10) {
  //  songs[currentSong].pause();
  // arrayFix();
 //songs[currentSong].unmute(); 
