@@ -145,6 +145,7 @@ void drawlooponceButton() {
   fill(grey);
   if (musicButtons==false)ellipse(loopOnceX2, loopOnceY2, loopOnce2Width, loopOnce2Height);
   fill(resetcolourDaymode);
+//  textDraw3();
   fill(loop1color);
   if (musicButtons==false)triangle(loopOnceTriX1, loopOnceTriY1, loopOnceTriX2, loopOnceTriY2, loopOnceTriX3, loopOnceTriY3);
 }// end loop once

@@ -22,6 +22,7 @@ Boolean musicButtons= true;
 Boolean musicFalse = false;
 String Musicbutton = "Music";
 String Quitbutton = " X ";
+String looponce = " 1 ";
 // global variables
 //
 void setup() {
@@ -190,6 +191,14 @@ void textDraw2() {
   text(Quitbutton, QuitButtonX, QuitButtonY, QuitButtonWidth, QuitButtonHeight);
   textdrawpost();
 }
+
+
+void textDraw3() {
+  textDrawPre();
+  text(looponce, loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
+  textdrawpost();
+}
+
 
 void textdrawpost() {
   fill(white);
