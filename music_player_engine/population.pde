@@ -1,9 +1,6 @@
  
  void population(){
- 
- appWidth = width ;
-  appHeight = height;
-  //
+
   float pauseStartDrawX = appWidth * 2/4;
   float pauseStartDrawY=  appHeight * 4/10;
   pauseScaleWidth =  1.0/30.0;

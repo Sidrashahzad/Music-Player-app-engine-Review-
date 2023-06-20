@@ -26,12 +26,13 @@ String looponce = " 1 ";
 // global variables
 //
 void setup() {
-  size(800, 500);
+ fullScreen();
+  // size(800, 500);
   setupMusic();
-  //
+  //displayWidth
   //  songs[currentSong].loop(0);// channge index manually
-  appWidth = width ;
-  appHeight = height;
+  appWidth = displayWidth ;
+  appHeight = displayHeight;
   MusicButtonX = appWidth*2.99/5;
   MusicButtonY = appHeight*0;
   MusicButtonWidth = appWidth*1/5;
